@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Inicio HEADER */
+
+header{
+    background-color: #202F36;
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1410px;
+    margin: auto;
+}
+
+.head{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: auto;
+}
+
+.logo{
+    width: 60px;
+    margin-right: 25px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+h3{
+    color: #eff3f5;
+}
+
+/* Fin HEADER */
+
+/* Inicio SECCIÓN BIENVENIDA */
+
+
+.bienvenida{
+    background-color: #0064af;
+    padding: 60px 0;
+}
+
+.seccion1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.imagenprincipal{
+    width: 550px;
+}
+
+.imagenprincipal img{
+    width: 100%;
+}
+
+.texto{
+    padding-left: 150px;
+    text-align: center;
+}
+.titulo{
+    color: #eff3f5;
+    padding-bottom: 80px;
+}
+
+.Descripcion{
+    color: #eff3f5;
+    font-size: 18px;
+    max-width: 570px;
+}
+
+/* FIN SECCIÓN BIENVENIDA */
+
+/* INICIO SECCION NIVELES */
+
+.Secniveles{
+    background-color: #192229;
+    width: 100%;
+    height: auto;
+}
+
+.niveles{
+    display: flex;
+    padding: 50px 0;
+    justify-content: space-around;
+}
+
+.nivel1, .nivel2, .nivel3{
+    text-decoration: none;
+}
+
+.TituloNivel{
+    background-color: #212e36;
+    border-radius: 10px 10px 0 0 ;
+    color: #eff3f5;
+    text-align: center;
+    padding: 10px 0;
+    
+}
+
+.ImagenNivel{
+    width: 380px;
+}
+
+.ImagenNivel img{
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+/* FIN SECCION NIVELES */
+
+/* INICIO FOOTER */
+
+footer{
+    background-color: #121a21;
+    width: 100%;
+    height: 50px;
+}
