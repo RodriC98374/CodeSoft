@@ -77,7 +77,8 @@ TemIn[0].onclick=function(){
         for(var j=1;j<TemIn[0].childNodes.length;j++){
             console.log(TemIn[0].childNodes[j].style.display="block");
         }
-    }   
+    }  
+    console.log(TemIn[0].childNodes[0].textContent); 
 }
 
 TemIn[1].onclick=function(){
