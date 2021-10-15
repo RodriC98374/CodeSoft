@@ -11,6 +11,7 @@ body{
 /* Inicio HEADER */
 
 header{
+   
     background-color: #202F36;
     width: 100%;
     height: auto;
@@ -21,6 +22,7 @@ header{
     width: 90%;
     max-width: 1410px;
     margin: auto;
+    
 }
 
 .head{
@@ -72,12 +74,36 @@ h3{
 /* INICIO SECCION TEMAS */
 
 .TemarioNivel{
+
     background-color: #20425E;
     width: 100%;
-    height: 800px;
+    padding-bottom: 20px;
+    overflow: hidden;
     /* height: auto;  --> Cambiar cuando terminen de implementar todo  */
 }
+.indice{
+    position:fixed;
+    margin-top: 4%;
+    width: 25%;  
+}
 
+.SUBTEMA{
+    padding-left: 7%;
+    list-style: none;
+}
+.SECCION{
+    padding-left: 10%;
+}
+.contenido{
+    margin-left: 5%;
+    margin-top: 4%;
+    width: 70%;
+    float: right;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
 /* FIN SECCION TEMAS */
 
 
