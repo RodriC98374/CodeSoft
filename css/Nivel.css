@@ -100,6 +100,14 @@ h3{
     width: 70%;
     float: right;
 }
+
+img{
+    margin: 20px;
+}
+
+ul{
+    padding-left: 3%;
+}
 a{
     text-decoration: none;
     color: #ffffff;
