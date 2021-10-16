@@ -1,15 +1,21 @@
 var temas = document.getElementsByClassName("Tema");
 var indice= document.getElementById("Temas");
 var TemIn= document.getElementsByClassName("TEMA");
+var BTemas=document.getElementsByClassName("B-TEMA");
 //Cargar Temas al indice
 for(var i=0 ; i<temas.length ; i++){
 var tema=temas[i];
 var temaN = document.createElement("label");
 temaN.innerHTML= tema.id
 temaN.title= tema.title;
-temaN.className= "TEMA"
+temaN.className= "B-TEMA"
 temaN.style.display="block"
 indice.appendChild(temaN);
+//LIsta de Subtitulos
+var LSub= document.createElement("ul");
+LSub.title=tema.title;
+LSub.className="TEMA";
+indice.appendChild(LSub);
 }
 //Cargar Subtemas al indice
 
@@ -68,37 +74,37 @@ for(var i=0;i<TemIn.length;i++){
 }   */
 //console.log(TemIn[0].childNodes[1].style.display="none");
    
-TemIn[0].onclick=function(){
-    if(TemIn[0].childNodes[1].style.display=="block"){
-        for(var j=1;j<TemIn[0].childNodes.length;j++){
+BTemas[0].onclick=function(){
+    if(TemIn[0].childNodes[0].style.display=="block"){
+        for(var j=0;j<TemIn[0].childNodes.length;j++){
             console.log(TemIn[0].childNodes[j].style.display="none");
         }
     }else{
-        for(var j=1;j<TemIn[0].childNodes.length;j++){
+        for(var j=0;j<TemIn[0].childNodes.length;j++){
             console.log(TemIn[0].childNodes[j].style.display="block");
         }
     }  
     console.log(TemIn[0].childNodes[0].textContent); 
 }
 
-TemIn[1].onclick=function(){
+BTemas[1].onclick=function(){
     if(TemIn[1].childNodes[1].style.display=="block"){
-        for(var j=1;j<TemIn[1].childNodes.length;j++){
+        for(var j=0;j<TemIn[1].childNodes.length;j++){
             console.log(TemIn[1].childNodes[j].style.display="none");
         }
     }else{
-        for(var j=1;j<TemIn[1].childNodes.length;j++){
+        for(var j=0;j<TemIn[1].childNodes.length;j++){
             console.log(TemIn[1].childNodes[j].style.display="block");
         }
     } 
 }
-TemIn[2].onclick=function(){
+BTemas[2].onclick=function(){
     if(TemIn[2].childNodes[1].style.display=="block"){
-        for(var j=1;j<TemIn[2].childNodes.length;j++){
+        for(var j=0;j<TemIn[2].childNodes.length;j++){
             console.log(TemIn[2].childNodes[j].style.display="none");
         }
     }else{
-        for(var j=1;j<TemIn[2].childNodes.length;j++){
+        for(var j=0;j<TemIn[2].childNodes.length;j++){
             console.log(TemIn[2].childNodes[j].style.display="block");
         }
     } 
