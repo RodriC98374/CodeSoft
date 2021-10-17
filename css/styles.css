@@ -11,7 +11,7 @@ body{
 /* Inicio HEADER */
 
 header{
-    background-color: #202F36;
+    background-color: #1D2731;
     width: 100%;
     height: auto;
     padding: 15px 0;
@@ -49,7 +49,7 @@ h3{
 
 
 .bienvenida{
-    background-color: #0064af;
+    background-color: #0B3C5D;
     padding: 60px 0;
 }
 
@@ -62,25 +62,37 @@ h3{
 }
 .imagenprincipal{
     width: 550px;
+    transition: all .4s;
 }
 
 .imagenprincipal img{
     width: 100%;
 }
 
+.imagenprincipal:hover{
+    transform: scale(1.1);
+}
+
 .texto{
     padding-left: 150px;
-    text-align: center;
+    text-align: right;
 }
 .titulo{
     color: #eff3f5;
-    padding-bottom: 80px;
+    font-size: 36px;
+}
+
+.titulo2{
+    color: #ffdb9e;
+    font-size: 24px;
 }
 
 .Descripcion{
     color: #eff3f5;
-    font-size: 18px;
+    font-weight: lighter;
+    font-size: 16px;
     max-width: 570px;
+    margin-top: 30px;
 }
 
 /* FIN SECCIÓN BIENVENIDA */
@@ -101,6 +113,13 @@ h3{
 
 .nivel1, .nivel2, .nivel3{
     text-decoration: none;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.nivel1:hover, .nivel2:hover, .nivel3:hover{
+
+    transform: translateY( -10px);
 }
 
 .TituloNivel{
@@ -126,7 +145,16 @@ h3{
 /* INICIO FOOTER */
 
 footer{
-    background-color: #121a21;
+    background-color: #192229;
     width: 100%;
-    height: 50px;
+    height: auto;
+    
+}
+
+.made{
+ font-size: 12px;
+ color: #7e7d7d;
+ text-align: center;
+ padding: 8px 0;
+
 }
