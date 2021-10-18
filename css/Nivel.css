@@ -12,7 +12,7 @@ body{
 
 header{
    
-    background-color: #202F36;
+    background-color: #1D2731;
     width: 100%;
     height: auto;
     padding: 15px 0;
@@ -37,27 +37,42 @@ header{
     font-family: 'Material icons';
     font-size: 35px;
     color: #ffffff;
-    
+    cursor: pointer;
+}
+
+.Menu:hover{
+    color: #ffc400;
 }
 
 .logo{
-    width: 60px;
-    margin: 0 25px;
+    width: 70px;
+    margin-right: 25px;
 }
 
 .logo img{
     width: 100%;
+    margin-right: 10px;
 }
 
 h3{
     color: #eff3f5;
 }
 
+.BtnHome{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
 .IconHome{
     font-family: 'Material icons';
     font-size: 35px;
     color: #ffffff;
-    margin-left: auto;
+    
+}
+
+.IconHome:hover{
+    color: #ffc400;
 }
 
 .Home{
@@ -65,17 +80,38 @@ h3{
     font-style: normal;
     text-decoration: none;
     font-size: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
     color: #eff3f5;
+    position: relative;
 }
 
+.Home::before{
+    content: "";
+    position: absolute;
+    width: 100%; height: 2px;
+    background-color: #ffc400;
+    border-radius: 100px;
+    bottom: -2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.Home:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
 /* FIN HEADER */
 
 /* INICIO SECCION TEMAS */
 
+.Temario{
+    color: #ffc400;
+}
+
 .TemarioNivel{
 
-    background-color: #20425E;
+    background-color: #181b32;
     width: 100%;
     padding-bottom: 20px;
     overflow: hidden;
@@ -88,18 +124,41 @@ h3{
     
 }
 
-.SUBTEMA{
+
+.subtema{
     padding-left: 7%;
     list-style: none;
+}
+
+h2{
+    color: #878fb8;
+}
+
+h3{
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+h4{
+    color: #eff3f5;
+}
+p{
+    color: #cccbcb;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 20px;
 }
 .SECCION{
     padding-left: 10%;
 }
 .contenido{
+    background-color: #2c2f48;
+    border-radius: 40px;
     margin-left: 5%;
     margin-top: 4%;
     width: 70%;
     float: right;
+    padding: 24px;
 }
 
 img{
@@ -109,11 +168,17 @@ img{
 
 ul{
     padding-left: 3%;
+    color: #0bd4c1;
+}
+
+li{
+    color: #0bd4c1;
 }
 a{
     text-decoration: none;
     color: #ffffff;
 }
+
 /* FIN SECCION TEMAS */
 
 
