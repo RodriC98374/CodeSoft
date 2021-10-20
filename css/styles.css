@@ -62,7 +62,7 @@ h3{
 }
 .imagenprincipal{
     width: 550px;
-    transition: all .4s;
+    /* transition: all .4s; */
 }
 
 .imagenprincipal img{
@@ -70,7 +70,7 @@ h3{
 }
 
 .imagenprincipal:hover{
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 .texto{
