@@ -52,7 +52,9 @@ botInd.onclick=function(){
         CON[0].style.width= "100%";
     }else{
         IND.style.display="block";
-        CON[0].style.width= "70%";
+        if(window.innerWidth>700){
+            CON[0].style.width= "70%";
+        }
     }
 }
 /*
@@ -88,4 +90,35 @@ document.onclick=function(a){
         }
      }
  }
+
+}
+window.onresize = function() {
+    var altura= window.innerHeight;
+    var footer= document.getElementsByClassName("footer");
+    var ancho = window.innerWidth;
+    if(altura==1366 && ancho== 1024){
+        IND.style.height= altura*0.88+"px";
+        CON[0].style.height= altura*0.88+"px";
+    }else{
+        IND.style.height= altura*0.755+"px";
+    CON[0].style.height= altura*0.755+"px";
+    }
+}
+window.onload = function(){
+    var footer= document.getElementsByClassName("footer");
+    var altura= window.innerHeight;
+    var ancho = window.innerWidth;
+
+    console.log(altura);
+    if(altura==1366 && ancho== 1024){
+        IND.style.height= altura*0.88+"px";
+        CON[0].style.height= altura*0.88+"px";
+    }
+    if(altura==1024 && ancho==768){
+        IND.style.height= altura*0.83+"px";
+        CON[0].style.height= altura*0.83+"px";
+    }else{
+        IND.style.height= altura*0.755+"px";
+    CON[0].style.height= altura*0.755+"px";
+    }
 }
