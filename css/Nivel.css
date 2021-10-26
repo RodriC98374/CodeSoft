@@ -283,7 +283,6 @@ footer{
         width: 60%;
     }
 
-    
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -303,7 +302,9 @@ footer{
     .ImagenNivel{
         width: 280px;
     }
-    
+    .indice{
+        float: left;
+    }
 }
 
 
@@ -340,11 +341,12 @@ footer{
             margin-bottom: 28px;
         }
         .indice{
-            
+            width: 90%;
+            display: none;
             position:fixed;
         }
         .contenido{
-            width: 70%;
+            width: 100%;
         }
 }
 

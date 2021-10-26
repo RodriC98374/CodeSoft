@@ -99,6 +99,10 @@ window.onresize = function() {
     if(altura==1366 && ancho== 1024){
         IND.style.height= altura*0.88+"px";
         CON[0].style.height= altura*0.88+"px";
+    }
+    if(altura==1024 && ancho==768){
+        IND.style.height= altura*0.84+"px";
+        CON[0].style.height= altura*0.84+"px";
     }else{
         IND.style.height= altura*0.755+"px";
     CON[0].style.height= altura*0.755+"px";
@@ -115,8 +119,8 @@ window.onload = function(){
         CON[0].style.height= altura*0.88+"px";
     }
     if(altura==1024 && ancho==768){
-        IND.style.height= altura*0.83+"px";
-        CON[0].style.height= altura*0.83+"px";
+        IND.style.height= altura*0.84+"px";
+        CON[0].style.height= altura*0.84+"px";
     }else{
         IND.style.height= altura*0.755+"px";
     CON[0].style.height= altura*0.755+"px";
