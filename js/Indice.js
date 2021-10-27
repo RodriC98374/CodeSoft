@@ -96,9 +96,12 @@ window.onresize = function() {
     var altura= window.innerHeight;
     var footer= document.getElementsByClassName("footer");
     var ancho = window.innerWidth;
+    var cabezera = document.getElementsByClassName("logonivel");
     if(altura==1366 && ancho== 1024){
         IND.style.height= altura*0.88+"px";
         CON[0].style.height= altura*0.88+"px";
+        footer[0].style.height="150px";
+        cabezera[0].style.width="130px"
     }
     if(altura==1024 && ancho==768){
         IND.style.height= altura*0.84+"px";
@@ -113,11 +116,13 @@ window.onload = function(){
     var footer= document.getElementsByClassName("footer");
     var altura= window.innerHeight;
     var ancho = window.innerWidth;
-
+    var cabezera = document.getElementsByClassName("logonivel");
     console.log(altura);
     if(altura==1366 && ancho== 1024){
         IND.style.height= altura*0.88+"px";
         CON[0].style.height= altura*0.88+"px";
+        footer[0].style.height="150px";
+        cabezera[0].style.width="130px"
     }
     if(altura==1024 && ancho==768){
         IND.style.height= altura*0.84+"px";

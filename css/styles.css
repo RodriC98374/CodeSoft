@@ -214,7 +214,44 @@ footer{
         width: 60%;
     }
     
+    @media screen and (max-width: 1024px) {
+        .imagenprincipal{
+            width: 360px;
+        }
+        
+        .ImagenNivel img, 
+        .TituloNivel{
+            width: 100%;
+        }
+        .texto{
+            padding-left: 75px;
+        }
+        .titulo{
+            font-size: 24px;
+        }
+        
+        .titulo2{
+            font-size: 16px;
+        }
+        
+        .texto{
+            width: 60%;
+        }
+        .seccion1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+            .niveles{
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
 
+            .ImagenNivel{
+                width: 480px;
+            }
+    }
 /* Large devices (desktops, 992px and up)*/
 @media (max-width: 992px) { 
 
@@ -230,7 +267,7 @@ footer{
         margin: 0 30px;
     }
     .ImagenNivel{
-        width: 280px;
+        width: 470px;
     }
 }
 }
