@@ -107,6 +107,7 @@ window.onresize = function() {
         IND.style.height= altura*0.755+"px";
     CON[0].style.height= altura*0.755+"px";
     }
+    window.location.reload();
 }
 window.onload = function(){
     var footer= document.getElementsByClassName("footer");
