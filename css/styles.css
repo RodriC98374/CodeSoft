@@ -15,7 +15,8 @@ header{
     width: 100%;
     height: auto;
     padding: 15px 0;
-    
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .contenedor{
@@ -43,6 +44,24 @@ header{
 h3{
     color: #eff3f5;
 }
+
+.login{
+    margin-right: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login a{
+    text-decoration: none;
+    color: #eff3f5;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login a:hover{
+    color: #ffc400;
+}
+
 
 /* Fin HEADER */
 
@@ -163,7 +182,6 @@ footer{
 
 /*      RESPONSIVE    */
 
-
 .grid {
     display: grid;
     grid-template-columns: repeat(3, autoframe);
@@ -214,7 +232,7 @@ footer{
         width: 60%;
     }
     
-    @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
         .imagenprincipal{
             width: 360px;
         }
@@ -251,7 +269,7 @@ footer{
             .ImagenNivel{
                 width: 480px;
             }
-    }
+}
 /* Large devices (desktops, 992px and up)*/
 @media (max-width: 992px) { 
 
