@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+
+/* Header */
+
+header{
+    background-color: #1D2731;
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1410px;
+    margin: auto;
+}
+
+.head{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: auto;
+}
+
+.logo{
+    width: 70px;
+    margin-right: 20px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.tituloPlataforma{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+
+
+.BtnHome{
+    display: flex;
+    align-items:flex-end;
+    margin-left: auto;
+    
+}
+
+.IconHome{
+    font-family: 'Material icons';
+    font-size: 35px;
+    color: #ffffff;
+    
+}
+
+.IconHome:hover{
+    color: #ffc400;
+}
+
+.Home{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #eff3f5;
+    position: relative;
+    
+}
+
+.Home::before{
+    content: "";
+    position: absolute;
+    width: 100%; height: 2px;
+    background-color: #ffc400;
+    border-radius: 100px;
+    bottom: -2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.Home:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+/* FIN HEADER */
+
+/* INICIO FORMULARIO */
+
+
+
+.formulario{
+    background-color: #0B3C5D;
+    padding: 100px 0 262px 0;
+    width: 100%;
+    height: auto;
+}
+
+.CajaFormulario{
+    background-color: #023047;
+    max-width: 500px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.tituloIniciarSesion{
+    text-align: center;
+    color: #ffffff;
+}
+
+.ElementosFormulario{
+    padding: 30px;
+}
+
+
+.form-group > label{
+    
+    color: #ffffff;
+}
+
+/* Fin seccion formulario */
+
