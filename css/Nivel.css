@@ -63,7 +63,7 @@ h3{
 
 .BtnHome{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     margin-left: auto;
 }
 
