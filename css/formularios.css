@@ -109,8 +109,6 @@ header{
 
 /* INICIO FORMULARIO */
 
-
-
 .formulario{
     background-color: #0B3C5D;
     padding: 100px 0 262px 0;
@@ -123,9 +121,16 @@ header{
     max-width: 500px;
     margin-top: 50px;
     border-radius: 10px;
+
 }
 
+
 .tituloIniciarSesion{
+    text-align: center;
+    color: #ffffff;
+}
+
+.tituloRegistrarse{
     text-align: center;
     color: #ffffff;
 }
