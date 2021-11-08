@@ -45,20 +45,31 @@ h3{
     color: #eff3f5;
 }
 
-.login{
-    margin-right: 36px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.Sesion{
+    display: flex;
+    flex-direction: row;
+    margin-inline-start: auto;
 }
 
-.login a{
-    text-decoration: none;
-    color: #eff3f5;
+.iconIniciar{ 
+    color: #ffffff;
+    padding-right: 10px;
+    
+}
+
+.iconRegistrar{
+    padding-left: 20px;
+    padding-right: 10px;
+    color: #ffffff;
+}
+
+.Sesion a{
+    color: #ffffff;
     font-size: 16px;
-    font-weight: 500;
+    text-decoration: none;
 }
 
-.login a:hover{
+.Sesion a:hover{
     color: #ffc400;
 }
 
