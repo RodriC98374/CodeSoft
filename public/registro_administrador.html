@@ -57,33 +57,34 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
               <h1 class="tituloRegistrarse">Registrar <br> Administrador</h1> 
-                <form role="form">
+                <form role="form" id="form">
                   <div class="CajaFormulario">
                     <div class="ElementosFormulario">
                       <div class="form-group">
                         <label>Nombre Completo</label> 
-                        <input type="email" placeholder="Ingrese el Nombre Completo " class="form-control">
+                        <input id="name" type="text" placeholder="Ingrese el Nombre Completo " class="form-control">
                       </div>
                       
                       <div class="form-group">
                         <label>Correo Electrónico</label> 
-                        <input type="email" placeholder="Ingrese el Correo Electrónico" class="form-control">
+                        <input id="email" type="email" placeholder="Ingrese el Correo Electrónico" class="form-control">
                       </div>
 
                       <div class="form-group">
                         <label>Contraseña</label> 
-                        <input type="password" placeholder="Ingrese la contraseña" class="form-control">
+                        <input id="password" type="password" placeholder="Ingrese la contraseña" class="form-control">
                       </div>
 
                       <div class="form-group">
                         <label>Repetir Contraseña</label> 
-                        <input type="password" placeholder="Repetir Contraseña" class="form-control">
+                        <input id="password1"  type="password" placeholder="Repetir Contraseña" class="form-control">
                       </div>
 
                       <div><br>
                           <button class="btn btn-lg btn-primary btn-block" type="submit"><strong>Registrar</strong></button><br>
                           
                       </div>
+                      <p class="warnings" id="warnings"></p>
                     </div>
                   </div>
                 </form>
@@ -96,6 +97,7 @@
       <!-- FIN SECCION BIENVENIDA -->
 
   </div>
+  <script src="../js/formulario.js"></script>
 </body>
 
 </html>
