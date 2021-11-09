@@ -12,8 +12,6 @@ const firebaseConfig = {
 
   let db = firebase.firestore();
 
-  // @jhon funcion para guardar admins
-
   const SaveAdmin = (user) =>{
 
   db.collection("Admins").add({
@@ -43,12 +41,9 @@ const firebaseConfig = {
       'error'
     )
   }
-// @jhon captura de valores utilizando jquery
-//es una parrafo que se muestra
 
 let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
 
-// @jhon captura de valores utilizando jquery
 
   $("#btnsave").on('click',()=>{
     let nombre = $("#nombre").val();
@@ -72,7 +67,6 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     const parrafo = document.getElementById("warnings")
     let warnings = ""
 
-   // SaveAdmin(user);
 
   if(name.value.length <6){
       parrafo.innerHTML = "El nombre no es valido <br>"
@@ -80,34 +74,29 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       entrar = true
   }
   
-  //compara el correo
   if(!regexEmail.test(email.value)){
       parrafo.innerHTML = "El email no es valido <br>"
       window.alert("El email no es valido");
       entrar = true
   }
   
-  //compara la contraseña el tamaño
   if(pasword.value.length < 8){
       parrafo.innerHTML = "La contraseña no es valida <br>"
       window.alert("La contraseña no es valida");
       entrar = true
   }
-  
-  //compara la contraseña
+
   if(pasword2.value.length < 8){
       parrafo.innerHTML = "La contraseña no es valida <br>"
       window.alert("La confirmación de la contraseña no es valida");
       entrar = true
   }
-  //compara la contraseña
   if(pasword2.value != pasword.value){
       parrafo.innerHTML = "Las contraseñas no son iguales <br>"
       window.alert("Las contraseñas no son iguales");
       entrar = true
   }
- 
-  //manda todos los errores
+
   if(entrar == true){
       parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
       window.alert("Ingrese todos los espacios vacios");
@@ -117,5 +106,5 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       res=true;
       SaveAdmin(user);
   }
-  //aqui es donde manda a otra funcion
+  
   })
