@@ -17,7 +17,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/prefixfree.min.js"></script>
+
   <title>Contabilidad para todos</title>
+
+  <!-- @jhon scrips para la base de datos y para mensajes de confirmacion(todavia no funcional el mensaje)-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -57,45 +63,89 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
               <h1 class="tituloRegistrarse">Registrar <br> Administrador</h1> 
-                <form role="form">
-                  <div class="CajaFormulario">
+      <!--      <form role="form">    @jhon esto era lo que no dejaba subir a base de datos -->
+                  <div class="CajaFormulario"> 
                     <div class="ElementosFormulario">
+                      <!-- @jhon coloque un id cada campo y al boton para utilizarlos -->
                       <div class="form-group">
                         <label>Nombre Completo</label> 
-                        <input type="email" placeholder="Ingrese el Nombre Completo " class="form-control">
+                        <input id="nombre" type="text" placeholder="Ingrese el Nombre Completo " class="form-control" onkeypress="return sololetras(event)">
+                        <script>
+                          function sololetras(e){
+                            key= e.keyCode || e.which;
+                            teclado= String.fromCharCode(key).toLowerCase();
+                            letras=" abcdefghijgklmnopqrstuvwqyz";
+                            especiales="8-37-38-46-164";
+                            teclado_especial=false;
+                            for(var i in especiales){
+                              if (key==especiales[i]) {
+                                teclado_especial=true;
+                                break;
+                               }
+                             }
+                             if (letras.indexOf(teclado)==-1 && !teclado_especial) {
+                               return false;
+                               
+                             }
+                          }
+                        </script>
                       </div>
                       
                       <div class="form-group">
                         <label>Correo Electrónico</label> 
-                        <input type="email" placeholder="Ingrese el Correo Electrónico" class="form-control">
+                        <input id="correo" type="" placeholder="Ingrese el Correo Electrónico" class="form-control">
                       </div>
 
                       <div class="form-group">
                         <label>Contraseña</label> 
-                        <input type="password" placeholder="Ingrese la contraseña" class="form-control">
+                        <input id="contraseña" type="password" placeholder="Ingrese la contraseña" class="form-control" onkeypress="return sololetrasyCar(event)">
+                        <script>
+                          function sololetrasyCar(e){
+                            key= e.keyCode || e.which;
+                            teclado= String.fromCharCode(key).toLowerCase();
+                            letras="abcdefghigklmnopqrstuvwqyz.,;:_-1234567890";
+                            especiales="8-37-38-46-164";
+                            teclado_especial=false;
+                            for(var i in especiales){
+                              if (key==especiales[i]) {
+                                teclado_especial=true;
+                                break;
+                               }
+                             }
+                             if (letras.indexOf(teclado)==-1 && !teclado_especial) {
+                               return false;
+                               
+                             }
+                          }
+                        </script>
                       </div>
 
                       <div class="form-group">
                         <label>Repetir Contraseña</label> 
-                        <input type="password" placeholder="Repetir Contraseña" class="form-control">
+                        <input id="repcontraseña" type="password" placeholder="Repetir Contraseña" class="form-control" onkeypress="return sololetrasyCar(event)">
                       </div>
 
                       <div><br>
-                          <button class="btn btn-lg btn-primary btn-block" type="submit"><strong>Registrar</strong></button><br>
+                          <button id="btnsave" class="btn btn-lg btn-primary btn-block" type="submit"><strong>Registrar</strong></button><br>
                           
                       </div>
+                      <p class="warnings" id="warnings"></p>
                     </div>
                   </div>
-                </form>
+     <!--   </form>  @jhon -->
                
             </div>
           </div>
-        </div>
+        </div> 
       </section>
 
       <!-- FIN SECCION BIENVENIDA -->
 
   </div>
 </body>
+
+<!-- @jhon scrip de admin y de jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script src="../js/adminDB.js"></script>
 
 </html>
