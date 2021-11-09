@@ -145,6 +145,14 @@ header{
     color: #ffffff;
 }
 
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:#ffffff;
+    padding-top: 20px;
+}
+
 /* Fin seccion formulario */
 
 .warnings{
