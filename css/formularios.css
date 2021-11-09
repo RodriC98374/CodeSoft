@@ -147,3 +147,10 @@ header{
 
 /* Fin seccion formulario */
 
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:#ffffff;
+    padding-top: 20px;
+}
