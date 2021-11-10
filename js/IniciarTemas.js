@@ -1,5 +1,5 @@
 var Subtemas=[];
-var contenedor=document.getElementById("Nivel2");
+var contenedor=document.getElementById("cont");
 /*----------------Base de datos------------------------------------*/
 
 
@@ -13,7 +13,7 @@ var contenedor=document.getElementById("Nivel2");
 var Temas=[];
  setTimeout(()=>{Temas= document.getElementsByClassName("TemaC");
  for(var i=0 ;i<Temas.length;i++){
-     if(Temas[i].length=1){
+     if(Temas[i].childNodes.length==1){
          var PrimerSub= document.createElement("input");
          PrimerSub.type= "text";
          Temas[i].appendChild(PrimerSub);

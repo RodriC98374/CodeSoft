@@ -1,7 +1,7 @@
 var LisTemas= [];
 var indice = document.getElementById("IND");
 var nuevoTema= document.getElementById("Nuevo tema");
-var Nivel= document.getElementById("Nivel2");
+var Nivel= document.getElementById("cont");
 /*----------------Base de datos------------------------------------*/
   // Import the functions you need from the SDKs you need
   const firebaseConfig = {
@@ -14,10 +14,13 @@ var Nivel= document.getElementById("Nivel2");
     appId: "1:806557774561:web:2cdde2a5dee91f6d5bbda0",
     measurementId: "G-4193E2WJWZ"
   };
-
+  //Storage
+  
+ // var storageRef=storage.ref();
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   let db =firebase.firestore();
+  var storage=firebase.storage();
   //Guardar el tema
   function GuardarTema(tema){
       db.collection("Temas").add({
