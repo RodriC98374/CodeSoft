@@ -174,7 +174,9 @@ p{
 
 img{
     margin: 20px;
+    width: 87%;
     height:auto;
+    display: block;
 }
 
 ul{

@@ -45,7 +45,7 @@ function CargarSubtemas() {
             ID.innerHTML = L_subtemas[i].Descripcion.ID;
             var divTemas=cont.getElementsByClassName("TemaC");
             var ContTemas;
-
+/*----------------------------SUBTITULO---------------------*/
             if (L_subtemas[i].Descripcion.Tipo == "Subtitulo") {
                 //console.log("Subtemas");
                 
@@ -76,6 +76,7 @@ function CargarSubtemas() {
                 Borrar(divContSub);
                 Añadir(divContSub);
             }
+/*----------------------------LISTA-----------------------------*/
             if (L_subtemas[i].Descripcion.Tipo == "Lista") {
                 //console.log("Listas");
                 var lista = document.createElement("div");
@@ -134,6 +135,7 @@ function CargarSubtemas() {
                 Añadir(lista);
                 
             }
+/*----------------------------PARRAFO---------------------------*/
             if (L_subtemas[i].Descripcion.Tipo == "Parrafo"){
                // console.log("parrafos");
                 var parrafo = document.createElement("div");
@@ -190,8 +192,61 @@ function CargarSubtemas() {
                // setTimeout(() => { }, 500000);
             }
 
+/*----------------------------IMAGEN----------------------------*/
 
+            if (L_subtemas[i].Descripcion.Tipo == "Imagen"){
+                // console.log("parrafos");
+                 var divImagen = document.createElement("div");
+                 divImagen.id = L_subtemas[i].ID;
+                 var imgn = document.createElement('img');
+                 imgn.src=L_subtemas[i].Descripcion.Contenido;
+ 
+                 var divTemas=cont.getElementsByClassName("TemaC");
+                
+                divImagen.appendChild(imgn);
 
+                 var contTemasP;
+                 
+                 for(var g=0;g<divTemas.length;g++){
+                     if(divTemas[g].id==L_subtemas[i].Descripcion.Tema){
+                         contTemasP=divTemas[g];
+                         //console.log("---------------");
+                       //  console.log(contTemas);
+                        // console.log("---------------");
+                     }
+                 }
+                
+                 var auxP=contTemasP.getElementsByTagName("div");
+                 var pos2=0;
+                 var ultimoSubtema=[];
+                 for(var j=0;j<auxP.length;j++){
+                     if(auxP[j].id==0){
+                         ultimoSubtema[pos2]=auxP[j];
+                         pos2++;
+                     }
+                 }
+                 //console.log(ultimoSubtema);
+                 //--------antes---------------
+                 //var ultimo=ultimoSubtema[ultimoSubtema.length-1];
+                 //ultimo.appendChild(parrafo);
+                 //---------------despues..................
+                  if(pos2==0){
+ 
+                 contTemasP.appendChild(divImagen);
+ 
+                }else{
+ 
+                 var ultimo=ultimoSubtema[ultimoSubtema.length-1];
+                 ultimo.appendChild(divImagen);
+ 
+                }
+                 
+                 divImagen.appendChild(ID);
+                 EditarI(divImagen);
+                 Borrar(divImagen);
+                 Añadir(divImagen);
+                // setTimeout(() => { }, 500000);
+             }
 
 
         }
@@ -199,6 +254,98 @@ function CargarSubtemas() {
     }
 
 }
+/*---------------EDITAR IMAGEN---------------------*/
+function EditarI(contenedor){
+
+    var btnEImg=document.createElement("button");
+    btnEImg.innerHTML="Editar";
+    contenedor.appendChild(btnEImg);
+    btnEImg.onclick=function(){
+        var divEdicion=document.createElement("div");
+        var imgEd=document.createElement('input');
+        imgEd.id = "imagen";
+        imgEd.setAttribute('accept','image/*');
+        imgEd.type="file";
+        var nimg = document.createElement("img");
+        nimg.id = "PrevImg";
+        contenedor.childNodes[2].style.display="none";
+        contenedor.childNodes[3].style.display="none";
+        contenedor.childNodes[4].style.display="none";
+        imgEd.addEventListener('change', mostrar, 'false');
+        divEdicion.appendChild(imgEd);
+        divEdicion.appendChild(nimg);
+        contenedor.appendChild(divEdicion);
+
+        AceptarEI(divEdicion);
+        CancelarEI(divEdicion);
+    }
+}
+
+function CancelarEI(contenedor){
+    var btnCEI=document.createElement('button');
+    btnCEI.innerHTML="Cancelar";
+    contenedor.appendChild(btnCEI);
+    btnCEI.onclick=function(){
+        contenedor.parentNode.childNodes[2].style.display="inline";
+        contenedor.parentNode.childNodes[3].style.display="inline";
+        contenedor.parentNode.childNodes[4].style.display="inline";
+        contenedor.parentNode.removeChild(contenedor);
+
+    }
+
+}
+
+function AceptarEI(contenedor){
+    var btnAEI=document.createElement("button");
+    btnAEI.innerHTML="Aceptar";
+    contenedor.appendChild(btnAEI);
+    console.log(contenedor);
+    btnAEI.onclick=function(){
+        var file=contenedor.childNodes[0].files[0];
+        if(!file){
+
+        }else{
+            contenedor.parentNode.childNodes[2].style.display="inline";
+            contenedor.parentNode.childNodes[3].style.display="inline";
+            contenedor.parentNode.childNodes[4].style.display="inline";
+            var storageRef=storage.ref('/Nivel2/'+file.name+Math.random());
+            var uploadTask=storageRef.put(file);
+            var urlImg;
+            
+            uploadTask.on('state_changed',function(snapshot){},function(error){
+                console.log(error);
+            }, function(){
+                
+                uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+                    urlImg=url;
+                    console.log(urlImg);
+                    contenedor.parentNode.childNodes[0].src=urlImg;
+                    contenedor.parentNode.removeChild(contenedor);
+                });
+                
+            });       
+        }
+        
+        
+    }
+
+}
+
+
+
+
+    
+   //var spaceRefFull = storage.GetReferenceFromUrl(contenedor.childNodes[0].src);
+   // var desertRef = storageRef.child('images/desert.jpg');
+
+// Delete the file
+//desertRef.delete().then(function() {
+  // File deleted successfully
+//}).catch(function(error) {
+  // Uh-oh, an error occurred!
+//});
+
+
 /*---------------------------------Boton Editar----------------------------*/
 function Editar(subtema) {
     var Editar = document.createElement("button");
@@ -461,7 +608,7 @@ function aceptarI(contenedor){
         if(!file){
 
         }else{
-            var storageRef=storage.ref('/Nivel2/'+file.name);
+            var storageRef=storage.ref('/Nivel2/'+file.name+Math.random());
             var uploadTask=storageRef.put(file);
             var urlImg;
             
@@ -475,10 +622,7 @@ function aceptarI(contenedor){
                     cargarDatos(urlImg,contenedor);
                 });
                 
-            });
-
-         
-            
+            });       
         }
     }
     
@@ -633,10 +777,10 @@ function aceptar(subtema) {
 }
 function saberPosicion(subtema) {
     setTimeout(() => { }, 1);
-  //  console.log("xxxxxxxxxxxxxxxxxxxxx");
-   // console.log(subtema.parentNode.parentNode.parentNode);
-  //  console.log("xxxxxxxxxxxxxxxxxxxxxxxxx");
-    
+  //console.log("xxxxxxxxxxxxxxxxxxxxx");
+    //console.log(subtema.parentNode.parentNode.parentNode);
+  //console.log("xxxxxxxxxxxxxxxxxxxxxxxxx");
+   //console.log(subtema);
     var aux = 0;
     if (L_subtemas.length == 0) {
         console.log("primero");
@@ -662,8 +806,10 @@ function saberPosicion(subtema) {
                 } else {
                     
                    // console.log("medio");
-                   // console.log(list[i +1 ]);
-                    //console.log(list[i -1 ]);
+                   console.log("medio---------------------");
+                    console.log(list[i +1 ]);
+                    console.log(list[i -1 ]);
+                    console.log("medio------------------");
                     aux = Number((Number(list[i - 1].childNodes[1].innerHTML) + Number(list[i + 1].childNodes[1].innerHTML) )/ 2);
                     //console.log(aux);
                     console.log(Number(list[i - 1].childNodes[1].innerHTML) + Number(list[i + 1].childNodes[1].innerHTML));
