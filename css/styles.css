@@ -6,12 +6,12 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, #3a287a, #00429b, #006dba, #0095ce, #2dbcdc);
 }
 
 /* Inicio HEADER */
 
 header{
-    background-color: #1D2731;
     width: 100%;
     height: auto;
     padding: 15px 0;
@@ -80,7 +80,7 @@ h3{
 
 
 .bienvenida{
-    background-color: #0B3C5D;
+    
     padding: 60px 0;
     
 }
@@ -132,7 +132,7 @@ h3{
 /* INICIO SECCION NIVELES */
 
 .Secniveles{
-    background-color: #192229;
+    /* background-color: #192229; */
     width: 100%;
     height: auto;
 }
@@ -141,16 +141,18 @@ h3{
     display: flex;
     padding: 50px 0;
     justify-content: space-around;
+    
 }
 
 .nivel1, .nivel2, .nivel3{
     text-decoration: none;
     cursor: pointer;
     transition: all .4s;
+    
 }
 
 .nivel1:hover, .nivel2:hover, .nivel3:hover{
-
+    
     transform: translateY( -10px);
 }
 
@@ -165,11 +167,13 @@ h3{
 
 .ImagenNivel{
     width: 380px;
+
 }
 
 .ImagenNivel img{
     width: 100%;
     border-radius: 0 0 10px 10px;
+    box-shadow: 5px 5px 23px -4px rgba(29, 42, 153, 0.644);
 }
 
 /* FIN SECCION NIVELES */
@@ -177,7 +181,7 @@ h3{
 /* INICIO FOOTER */
 
 footer{
-    background-color: #192229;
+    background-color: #1184b97c;
     width: 100%;
     height: auto;
     
@@ -185,7 +189,7 @@ footer{
 
 .made{
     font-size: 12px;
-    color: #7e7d7d;
+    color: #fafafa;
     text-align: center;
     padding: 8px 0;
 

@@ -6,14 +6,14 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
-    
+    background: linear-gradient(to bottom, #3a287a, #00429b, #006dba, #0095ce, #2dbcdc);
 }
 
 
 /* Header */
 
 header{
-    background-color: #1D2731;
+    /* background-color: #1D2731; */
     width: 100%;
     height: auto;
     padding: 15px 0;
@@ -110,14 +110,14 @@ header{
 /* INICIO FORMULARIO */
 
 .formulario{
-    background-color: #0B3C5D;
+    /* background-color: #0B3C5D; */
     padding: 100px 0 262px 0;
     width: 100%;
     height: auto;
 }
 
 .CajaFormulario{
-    background-color: #023047;
+    background-color: hsl(0, 100%, 50%, .1);
     max-width: 500px;
     margin-top: 50px;
     border-radius: 10px;
@@ -166,6 +166,19 @@ header{
     color: #158a99;
 }
 
+.text-muted{
+    color: #e3e0e6af;
+}
+
+.btn-primary{
+    background-color:#1e6091;
+    border-color: #2e6da4;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover{ 
+    transform: scale(1.04);
+}
 .warnings{
     width: 200px;
     text-align: center;
