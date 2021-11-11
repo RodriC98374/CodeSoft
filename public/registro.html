@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/prefixfree.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <title>Contabilidad para todos</title>
 </head>
 
@@ -62,35 +64,35 @@
                     <div class="ElementosFormulario">
                       <div class="form-group">
                         <label>Nombre Completo</label> 
-                        <input id="nombre" type="text" placeholder="Ingrese su Nombre Completo " required class="form-control">
+                        <input type="text" placeholder="Ingrese su Nombre Completo " class="form-control" id="Nombre">
                       </div>
                       
                       <div class="form-group">
                         <label>Correo Electrónico</label> 
-                        <input id="correo"  type="email" placeholder="Ingrese su Correo Electrónico" required class="form-control">
+                        <input type="email" placeholder="Ingrese su Correo Electrónico" class="form-control" id="Correo">
                       </div>
 
                       <div class="form-group">
                         <label>Contraseña</label> 
-                        <input id="password1" type="password" placeholder="Ingrese Su contraseña" required class="form-control">
+                        <input type="password" placeholder="Ingrese Su contraseña" class="form-control" id="Contraseña">
                       </div>
 
                       <div class="form-group">
                         <label>Repetir Contraseña</label> 
-                        <input id="password2" type="password" placeholder="Repetir Contraseña" required class="form-control">
+                        <input type="password" placeholder="Repetir Contraseña" class="form-control" id="Repetir">
                       </div>
 
                       <div><br>
-                          <button id="btnsave" class="btn btn-lg btn-primary btn-block" type="submit"><strong>Registrarse</strong></button><br>
-                          <p class="text-muted text-center">
-                              <small>¿Ya tienes cuenta?</small>
-                          </p>
-                          <a class="btn btn-lg btn-default btn-block" href="login.html">Iniciar Sesión</a>
+                        <label class="btn btn-lg btn-primary btn-block" type="submit" id="Registrar"><strong>Registrarse</strong></label><br>
+                        <p class="text-muted text-center">
+                            <small>¿Ya tienes cuenta?</small>
+                        </p>
+                        <a class="btn btn-lg btn-default btn-block" href="login.html">Iniciar Sesión</a>  
                       </div>
                     </div>
                   </div>
                 </form>
-                <p class="warnings" id="warnings"></p>
+
             </div>
           </div>
         </div>
@@ -99,116 +101,7 @@
       <!-- FIN SECCION BIENVENIDA -->
 
   </div>
+  <script src="../js/registro.js"></script>
 </body>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDHLpRs2bE6-jZ-h68h1CuqA0dysbIOo1U",
-    authDomain: "codesoft-175b0.firebaseapp.com",
-    projectId: "codesoft-175b0",
-    storageBucket: "codesoft-175b0.appspot.com",
-    messagingSenderId: "107712088438",
-    appId: "1:107712088438:web:8833a774aa4d0c1d045257",
-    measurementId: "G-F7WD0B4ZK3"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  let db = firebase.firestore();
-
-  const saveUSer = (user) =>{
-
-  db.collection("Usuarios").add({
-      user
-    })
-    .then((docRef) => {
-      mensajeOK();
-    })
-    .catch((error) => {
-      mensajeError();
-    });
-  }
-
-  const mensajeOK =()=>{
-    Swal.fire(
-      'Exito!',
-      'Datos guardados correctamente!',
-      'success'
-    )
-  }
-
-  const mensajeError =()=>{
-    Swal.fire(
-      'ops!',
-      'Los Datos no fueron guardados!',
-      'error'
-    )
-  }
-  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-  $("#btnsave").on('click',()=>{
-    
-    const user = {
-      nombre,
-      correo,
-      password
-    }
-
-    const name=document.getElementById("nombre")
-    const email=document.getElementById("correo")
-    const pasword1=document.getElementById("password1")
-    const pasword2=document.getElementById("password2")
-    const parrafo = document.getElementById("warnings")
-    let warnings = ""
-
-
-    if(name.value.length <6){
-        parrafo.innerHTML = "El nombre no es valido <br>"
-        window.alert("El nombre no es valido");
-        entrar = true
-    }
-    
-    if(!regexEmail.test(email.value)){
-        parrafo.innerHTML = "El email no es valido <br>"
-        window.alert("El email no es valido");
-        entrar = true
-    }
-    
-    if(pasword.value.length < 8){
-        parrafo.innerHTML = "La contraseña no es valida <br>"
-        window.alert("La contraseña no es valida");
-        entrar = true
-    }
-
-    if(pasword2.value.length < 8){
-        parrafo.innerHTML = "La contraseña no es valida <br>"
-        window.alert("La confirmación de la contraseña no es valida");
-        entrar = true
-    }
-    if(pasword2.value != pasword.value){
-        parrafo.innerHTML = "Las contraseñas no son iguales <br>"
-        window.alert("Las contraseñas no son iguales");
-        entrar = true
-    }
-
-    if(entrar == true){
-        parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
-        window.alert("Ingrese todos los espacios vacios");
-    }else {
-        parrafo.innerHTML = "Registrado Correctamente"
-        window.alert("Registrado Correctamente");
-        res=true;
-        saveUser(user);
-    }
-  
-  })
-</script>
 
 </html>

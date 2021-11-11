@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/prefixfree.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
   <title>Iniciar Sesión | Contabilidad para Todos</title>
 </head>
@@ -63,14 +65,14 @@
                     <div class="ElementosFormulario">
                       <div class="form-group">
                         <label >Correo Electrónico</label> 
-                        <input type="email" placeholder="Ingrese su Correo Electrónico" class="form-control">
+                        <input type="email" placeholder="Ingrese su Correo Electrónico" class="form-control" id="Correo">
                       </div>
                       <div class="form-group">
                         <label >Contraseña</label> 
-                        <input type="password" placeholder="Ingrese Su Contraseña" class="form-control">
+                        <input type="password" placeholder="Ingrese Su Contraseña" class="form-control" id="Contraseña">
                       </div>
                       <div><br>
-                          <button class="btn btn-lg btn-primary btn-block" type="submit"><strong>Iniciar Sesión</strong></button><br>
+                          <label class="btn btn-lg btn-primary btn-block" id="Sesion" ><strong>Iniciar Sesión</strong></label><br>
                           <p class="text-muted text-center">
                               <small>Aun no tiene cuenta?</small>
                           </p>
@@ -91,6 +93,7 @@
     
     
   </div>
+  <script src="../js/login.js"></script>
 </body>
 
 </html>

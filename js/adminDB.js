@@ -1,21 +1,24 @@
+var Usuarios=[];
 // @jhon coneccion con la base de datods
 const firebaseConfig = {
-    apiKey: "AIzaSyDdZWAnrL7QIeDBdqNUbJ44nw-XzGcsnZQ",
-    authDomain: "ing-software-f4bd1.firebaseapp.com",
-    projectId: "ing-software-f4bd1",
-    storageBucket: "ing-software-f4bd1.appspot.com",
-    messagingSenderId: "767531691582",
-    appId: "1:767531691582:web:7ecd59c340b451ca56ab6f"
+  apiKey: "AIzaSyD6bMG3VhwxFVxz50AG1FugRJ4QfW2qU5c",
+  authDomain: "codesoft-15fe4.firebaseapp.com",
+  databaseURL: "https://codesoft-15fe4-default-rtdb.firebaseio.com",
+  projectId: "codesoft-15fe4",
+  storageBucket: "codesoft-15fe4.appspot.com",
+  messagingSenderId: "806557774561",
+  appId: "1:806557774561:web:2cdde2a5dee91f6d5bbda0",
+  measurementId: "G-4193E2WJWZ"
   };
     
   firebase.initializeApp(firebaseConfig);
 
   let db = firebase.firestore();
 
-  const SaveAdmin = (user) =>{
+  const SaveAdmin = (Usuario) =>{
 
-  db.collection("Admins").add({
-      user
+  db.collection("Usuarios").add({
+      Usuario
     })
   .then((docRef) => {
     MJSOK();
@@ -24,6 +27,15 @@ const firebaseConfig = {
     MJSERROR();
     });
   }
+  db.collection("Usuarios").get().then(function(BaseUsuarios){
+     
+    BaseUsuarios.forEach(function(doc){
+      Usuarios.push({
+          Descripcion: doc.data().Usuario,
+          ID: doc.id
+      });  
+    });
+});
 
 
   const MJSOK =()=>{
@@ -46,18 +58,18 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
 
 
   $("#btnsave").on('click',()=>{
-    let nombre = $("#nombre").val();
-    let correo = $("#correo").val();
-    let contraseña = $("#contraseña").val();
-    let repcontraseña =$("#repcontraseña").val();
+    let Nombre = $("#nombre").val();
+    let Correo = $("#correo").val();
+    let Contraseña = $("#contraseña").val();
+    let Rol ="Administrador"
     let res = false
     let entrar = false
 
-    const user = {
-      nombre,
-      correo,
-      contraseña,
-      repcontraseña
+    const Usuario = {
+      Nombre,
+      Correo,
+      Contraseña,
+      Rol
     }
 
     const name=document.getElementById("nombre")
@@ -65,7 +77,7 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     const pasword=document.getElementById("contraseña")
     const pasword2=document.getElementById("repcontraseña")
     const parrafo = document.getElementById("warnings")
-    let warnings = ""
+    let warnings = "";
 
 
   if(name.value.length <6){
@@ -101,10 +113,23 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
       window.alert("Ingrese todos los espacios vacios");
   }else {
+      if(Existe(email.value)==0){
       parrafo.innerHTML = "Registrado Correctamente"
       window.alert("Registrado Correctamente");
       res=true;
-      SaveAdmin(user);
+      SaveAdmin(Usuario);
+      }else{
+        alert("Ya existe ese usuario");
+      }
   }
   
   })
+  function Existe(a){
+    var encontrado=0;
+    for(var i=0;i<Usuarios.length;i++){
+       if(a==Usuarios[i].Descripcion.Correo){
+           encontrado=1;
+       }
+    }
+    return encontrado;
+}
