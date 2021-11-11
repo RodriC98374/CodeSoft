@@ -139,10 +139,31 @@ header{
     padding: 30px;
 }
 
+.form-group{
+    position: relative;
+}
 
 .form-group > label{
     
     color: #ffffff;
+}
+
+.IconEye, .IconEye1{
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-15%);
+    color: #030303;
+    font-size: 25px;
+    opacity: 0.4;
+    cursor: pointer;
+    font-family: 'Material icons';
+}
+
+.IconEye:hover, .IconEye1:hover{
+    transition: 0.9s;
+    opacity: 0.9;
+    color: #158a99;
 }
 
 .warnings{
