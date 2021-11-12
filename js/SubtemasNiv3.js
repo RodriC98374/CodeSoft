@@ -5,12 +5,12 @@ var storageRef = storage.ref();
 
 /*--------------------Guardar Subtemas--------------------------- */
 function GuardarSubtema(subtema) {
-    db.collection("Subtemas").add({
+    db.collection("Subtemas3").add({
         subtema
     });
 }
 /*---------------Leer------------------------------*/
-db.collection("Subtemas").get().then(function (BaseSubtemas) {
+db.collection("Subtemas3").get().then(function (BaseSubtemas) {
     BaseSubtemas.forEach(function (doc) {
         L_subtemas.push({
             Descripcion: doc.data().subtema,
@@ -453,7 +453,7 @@ function AceptarE(contenedor) {
     btnAE.onclick = function () {
         if (/\w/.test(contenedor.childNodes[0].value)) {
             if (contenedor.id == "Subtitulo") {
-                db.collection("Subtemas").doc(contenedor.parentNode.id).update({
+                db.collection("Subtemas3").doc(contenedor.parentNode.id).update({
                     subtema: { Contenido: contenedor.childNodes[0].value, Tema: contenedor.parentNode.parentNode.parentNode.id, ID: Number(contenedor.parentNode.childNodes[1].innerHTML), Tipo: contenedor.id }
                 })
             } else {
@@ -482,7 +482,7 @@ function AceptarE(contenedor) {
                 }
                 console.log(cadof);
                 if (cadof!= "") {
-                db.collection("Subtemas").doc(contenedor.parentNode.id).update({
+                db.collection("Subtemas3").doc(contenedor.parentNode.id).update({
                     subtema: { Contenido: cadof, Tema: contenedor.parentNode.parentNode.parentNode.id, ID: Number(contenedor.parentNode.childNodes[1].innerHTML), Tipo: contenedor.id }
                 })
                 }
@@ -698,10 +698,10 @@ function Borrar(subtema) {
         if (subtema.className == "Subtitulo") {
             var contSubtema = subtema.parentNode.childNodes;
             for (var i = 0; i < contSubtema.length; i++) {
-                db.collection("Subtemas").doc(contSubtema[i].id).delete();
+                db.collection("Subtemas3").doc(contSubtema[i].id).delete();
             }
         } else {
-            db.collection("Subtemas").doc(subtema.id).delete();
+            db.collection("Subtemas3").doc(subtema.id).delete();
         }
         setTimeout(() => { window.location.reload(); }, 2000);
     }

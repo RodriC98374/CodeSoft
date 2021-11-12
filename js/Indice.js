@@ -1,4 +1,4 @@
-var temas = document.getElementsByClassName("Tema");
+/*var temas = document.getElementsByClassName("Tema");
 var indice= document.getElementById("Temas");
 var TemIn= document.getElementsByClassName("TEMA");
 var BTemas=document.getElementsByClassName("B-TEMA");
@@ -32,6 +32,7 @@ for(var i=0; i<subtemas.length;i++){
         }
     }
 }
+*/
 //mostrar y quitar menu
 var indice1 = document.getElementById("Temario");
 indice1.onclick=function(){
@@ -43,6 +44,7 @@ indice1.onclick=function(){
     
 }
 //mostrar y quitar menu con el icono
+
 var botInd= document.getElementById("B-I");
 var IND = document.getElementById("IND");
 var CON = document.getElementsByClassName("contenido");
@@ -74,7 +76,7 @@ for(var i=0;i<TemIn.length;i++){
         }
     }
 }   */
-
+/*
 document.onclick=function(a){
  var f=a.target;
  for(var i=0;i<BTemas.length;i++){
@@ -92,6 +94,7 @@ document.onclick=function(a){
  }
 
 }
+*/
 window.onresize = function() {
     var altura= window.innerHeight;
     var footer= document.getElementsByClassName("footer");
@@ -111,6 +114,7 @@ window.onresize = function() {
     CON[0].style.height= altura*0.755+"px";
     }
     window.location.reload();
+   
 }
 window.onload = function(){
     var footer= document.getElementsByClassName("footer");
@@ -118,6 +122,7 @@ window.onload = function(){
     var ancho = window.innerWidth;
     var cabezera = document.getElementsByClassName("logonivel");
     console.log(altura);
+    
     if(altura==1366 && ancho== 1024){
         IND.style.height= altura*0.88+"px";
         CON[0].style.height= altura*0.88+"px";
@@ -131,4 +136,7 @@ window.onload = function(){
         IND.style.height= altura*0.755+"px";
     CON[0].style.height= altura*0.755+"px";
     }
+   
 }
+
+

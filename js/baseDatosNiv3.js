@@ -24,13 +24,13 @@ var Nivel= document.getElementById("cont");
 
   //Guardar el tema
   function GuardarTema(tema){
-      db.collection("Temas").add({
+      db.collection("Temas3").add({
           tema
       });
       
   }
   //leer Firebase
-    db.collection("Temas").get().then(function(BaseTemas){
+    db.collection("Temas3").get().then(function(BaseTemas){
      
         BaseTemas.forEach(function(doc){
           LisTemas.push({
@@ -132,7 +132,7 @@ function botonAceptarEdicion(tema){
     aceptarAux.onclick=function(){
         if(/\w/.test(tema.childNodes[4].value)){
             db.collection("Temas").doc(tema.id).update({
-                tema:{Titulo: tema.childNodes[4].value,Nivel:2,ID: Number(tema.childNodes[7].innerHTML)}
+                tema:{Titulo: tema.childNodes[4].value,Nivel:3,ID: Number(tema.childNodes[7].innerHTML)}
             })
             setTimeout(()=>{window.location.reload();},2000); 
         }else{
@@ -179,7 +179,7 @@ function botonCancelarEdicion(tema){
     aceptar.onclick=function(){
         if(/\w/.test(tituloA.value)){
             let ID= LisTemas.length;
-            let Nivel = 2;
+            let Nivel = 3;
             let Titulo= tituloA.value;
             const temaB={ID, Nivel,Titulo}
             GuardarTema(temaB);
@@ -217,7 +217,7 @@ function botonCancelarEdicion(tema){
        aceptar.onclick=function(){
           if(/\w/.test(tituloA.value)){
             let ID= entreTemas(tema);
-           let Nivel = 2;
+           let Nivel = 3;
            let Titulo= tituloA.value;
            const temaB={ID, Nivel,Titulo}
            GuardarTema(temaB);
