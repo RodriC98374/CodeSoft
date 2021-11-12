@@ -1,5 +1,5 @@
 var InicioSesion=document.getElementById("IniciarSesion");
-var IconoPer=document.getElementById("IconoPer");
+//var IconoPer=document.getElementById("IconoPer");
 var Registrarse=document.getElementById("Registrarse");
 var IconoAñadir=document.getElementById("IconoAñadir");
 var NombreU=document.getElementById("NombreUsuario");
@@ -11,7 +11,7 @@ if(localStorage.getItem("Sesion")==null||localStorage.getItem("Sesion")=="inacti
 }
 if(localStorage.getItem("Sesion")=="Activo"){
     InicioSesion.style.display="none";
-    IconoPer.style.display="none";
+   // IconoPer.style.display="none";
     Registrarse.style.display="none";
     IconoAñadir.style.display="none";
     NombreU.style.display="inline";
