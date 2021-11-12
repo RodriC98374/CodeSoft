@@ -1,4 +1,9 @@
 var Usuarios=[];
+var errores=document.getElementsByClassName("alerta");
+for(var i=0;i<errores.length;i++){
+    errores[i].style.display="none";
+    errores[i].style.color="red";
+}
 /*----------------Base de datos------------------------------------*/
   // Import the functions you need from the SDKs you need
   const firebaseConfig = {
@@ -11,6 +16,7 @@ var Usuarios=[];
     appId: "1:806557774561:web:2cdde2a5dee91f6d5bbda0",
     measurementId: "G-4193E2WJWZ"
   };
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   let db =firebase.firestore();
@@ -39,36 +45,40 @@ Registrar.onclick=function(){
     var Aceptar=0; 
     emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     if(nombre.value==""||correo.value==""||contraseña.value==""||Repetir.value==""){
-        alert("No se puede registrar espacios vacios");
+        errores[0].style.display="block";
         Aceptar=1;
     }else{
+        errores[0].style.display="none";
         if(contraseña.value.length<8 ){
-            alert("Contraseña muy corta");
+            errores[1].style.display="block";
             Aceptar=1;
-            }
+            }else{errores[1].style.display="none";}
             if(contraseña.value!=Repetir.value){
-                alert("Contraseña diferente a su comprobacion");
+                errores[2].style.display="block";
                 Aceptar=1;
-            }
+            }else{errores[2].style.display="none";}
             if(!emailRegex.test(correo.value)){
-                alert("Correo no valido");
+                errores[3].style.display="block";
                 Aceptar=1;
-            }
+            }else{errores[3].style.display="none";}
     }
-    if(Aceptar==0 && Existe(correo.value)==0 ){
-        console.log(Usuarios);
-        let Nombre= nombre.value;
-        let Correo= correo.value;
-        let Contraseña= contraseña.value;
-        let Rol="Estudiante";
-        const Usuario={Nombre, Correo,Contraseña,Rol};
-        GuardarUsuario(Usuario);
-        localStorage.setItem("Sesion","Activo");
-        localStorage.setItem("Nombre",Nombre)
-        //location.href="../public/index.html";
-        setTimeout(()=>{location.href="../public/index.html";},2000); 
-    }else{
-        alert("Ese usuario ya existe");
+    if(Aceptar==0){
+        if(Existe(correo.value)==0 ){
+            console.log(Usuarios);
+            let Nombre= nombre.value;
+            let Correo= correo.value;
+            let Contraseña= contraseña.value;
+            let Rol="Estudiante";
+            const Usuario={Nombre, Correo,Contraseña,Rol};
+            GuardarUsuario(Usuario);
+            localStorage.setItem("Sesion","Activo");
+            localStorage.setItem("Nombre",Nombre)
+            //location.href="../public/index.html";
+            setTimeout(()=>{location.href="../public/index.html";},2000);   
+        }else{
+            alert("Ese usuario ya existe");
+        }
+
     }
     
 

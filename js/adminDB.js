@@ -1,3 +1,4 @@
+//Este arreglo es para ver si el usuario ya existe
 var Usuarios=[];
 // @jhon coneccion con la base de datods
 const firebaseConfig = {
@@ -14,9 +15,9 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   let db = firebase.firestore();
-
+//Cambie el user por Usuario
   const SaveAdmin = (Usuario) =>{
-
+//La base se llama usuarios por que es generica
   db.collection("Usuarios").add({
       Usuario
     })
@@ -61,6 +62,8 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     let Nombre = $("#nombre").val();
     let Correo = $("#correo").val();
     let Contraseña = $("#contraseña").val();
+    //Antes habia la variable de la repeticion de la contraseña 
+    //En ves de eso le puse una variable rol para que sepa que es administrador
     let Rol ="Administrador"
     let res = false
     let entrar = false
@@ -113,6 +116,7 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
       window.alert("Ingrese todos los espacios vacios");
   }else {
+    //Aqui comprueba si existe un usuario con ese correo
       if(Existe(email.value)==0){
       parrafo.innerHTML = "Registrado Correctamente"
       window.alert("Registrado Correctamente");
@@ -124,6 +128,7 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
   }
   
   })
+  //Esta funcion es la que recorre la lista de usuarios para saber si ya existe
   function Existe(a){
     var encontrado=0;
     for(var i=0;i<Usuarios.length;i++){

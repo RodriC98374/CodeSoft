@@ -1,4 +1,4 @@
-var logo=document.getElementsByClassName("logonivel");
+var logo=document.getElementsByClassName("logo");
 logo[0].onclick=function(){
     if(localStorage.getItem("Rol")=="Administrador"){
         location.href="../public/indexAdmonistrador.html";

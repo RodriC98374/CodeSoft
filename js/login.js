@@ -30,7 +30,6 @@ const firebaseConfig = {
             alert("Llene todos los campos");
         }else{
             if(Existe(correo.value,contraseña.value)==1){
-                alert("Logueado");
                 localStorage.setItem("Sesion","Activo");
                 localStorage.setItem("Nombre",NUser(correo.value,contraseña.value));
                 localStorage.setItem("Rol",RUser(correo.value,contraseña.value))
