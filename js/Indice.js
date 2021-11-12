@@ -62,9 +62,9 @@ botInd.onclick=function(){
 /*
 for(var i=0;i<TemIn.length;i++){
     TemIn[i].onclick=function(){
-        */
+        
        //console.log(TemIn[0].childNodes.length);
-        /*
+        
         if(TemIn[i].childNodes[j].style.display=="block"){
             for(var j=1;j<TemIn[i].childNodes.length;j++){
                 TemIn[i].childNodes[j].style.display="none";
@@ -75,8 +75,8 @@ for(var i=0;i<TemIn.length;i++){
             }
         }
     }
-}   */
-/*
+}   
+
 document.onclick=function(a){
  var f=a.target;
  for(var i=0;i<BTemas.length;i++){

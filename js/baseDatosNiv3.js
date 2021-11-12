@@ -108,7 +108,7 @@ var Nivel= document.getElementById("cont");
     Borrar.className="BotonBorrar";
     tema.appendChild(Borrar);
     Borrar.onclick=function(){
-        db.collection("Temas").doc(tema.id).delete(); 
+        db.collection("Temas3").doc(tema.id).delete(); 
         setTimeout(()=>{window.location.reload();},2000); 
     }
  }
@@ -131,7 +131,7 @@ function botonAceptarEdicion(tema){
     aceptarAux.style.display="none";
     aceptarAux.onclick=function(){
         if(/\w/.test(tema.childNodes[4].value)){
-            db.collection("Temas").doc(tema.id).update({
+            db.collection("Temas3").doc(tema.id).update({
                 tema:{Titulo: tema.childNodes[4].value,Nivel:3,ID: Number(tema.childNodes[7].innerHTML)}
             })
             setTimeout(()=>{window.location.reload();},2000); 

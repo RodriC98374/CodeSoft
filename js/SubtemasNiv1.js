@@ -54,9 +54,7 @@ function CargarSubtemas() {
                 for (var t = 0; t < divTemas.length; t++) {
                     if (divTemas[t].id == L_subtemas[i].Descripcion.Tema) {
                         ContTemas = divTemas[t];
-                    }
-                }
-
+                        
                 var divSubtitulo = document.createElement("div");
 
                 ContTemas.appendChild(divSubtitulo);
@@ -76,6 +74,9 @@ function CargarSubtemas() {
                 Editar(divContSub);
                 Borrar(divContSub);
                 Añadir(divContSub);
+                    }
+                }
+
             }
             /*----------------------------LISTA-----------------------------*/
             if (L_subtemas[i].Descripcion.Tipo == "Lista") {
