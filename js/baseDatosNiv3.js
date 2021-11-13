@@ -87,8 +87,8 @@ var Nivel= document.getElementById("cont");
  }
  /*-------------------------Boton editar-------------------------------------------*/
  function botonEditar(tema){
-    var Editar=document.createElement("button");
-        Editar.innerHTML="Editar";
+    var Editar=document.createElement("icon");
+        // Editar.innerHTML="Editar";
         Editar.className="BotonEditar";
         tema.appendChild(Editar);
         Editar.onclick=function(){
@@ -103,8 +103,8 @@ var Nivel= document.getElementById("cont");
  }
  /*--------------------------Boton Borrar---------------------------------------*/
  function botonBorrar(tema){
-    var Borrar=document.createElement("button");
-    Borrar.innerHTML="Borrar";
+    var Borrar=document.createElement("icon");
+    // Borrar.innerHTML="Borrar";
     Borrar.className="BotonBorrar";
     tema.appendChild(Borrar);
     Borrar.onclick=function(){
@@ -114,8 +114,8 @@ var Nivel= document.getElementById("cont");
  }
  /*---------------------------Boton Añadir-------------------------------------------------------*/
  function botonAñadir(tema){
-    var Añadir=document.createElement("button");
-    Añadir.innerHTML="Añadir";
+    var Añadir=document.createElement("icon");
+    // Añadir.innerHTML="Añadir";
     Añadir.className="BotonAñadir";
     tema.appendChild(Añadir);
     Añadir.onclick=function(){
@@ -124,8 +124,8 @@ var Nivel= document.getElementById("cont");
  }
  /*-------------------------------Boton Aceptar edicion------------------------------------*/
 function botonAceptarEdicion(tema){
-    var aceptarAux=document.createElement("button");
-    aceptarAux.innerHTML="Aceptar";
+    var aceptarAux=document.createElement("icon");
+    // aceptarAux.innerHTML="Aceptar";
     aceptarAux.className="BotonAceptar";
     tema.appendChild(aceptarAux);
     aceptarAux.style.display="none";
@@ -144,8 +144,8 @@ function botonAceptarEdicion(tema){
 }
 /*---------------------------------------Boton Cancelar edicion------------------------------- */
 function botonCancelarEdicion(tema){
-    var cancelarAux=document.createElement("button");
-    cancelarAux.innerHTML="Cancelar";
+    var cancelarAux=document.createElement("icon");
+    // cancelarAux.innerHTML="Cancelar";
     cancelarAux.className="BotonCancelar";
     tema.appendChild(cancelarAux);
     cancelarAux.style.display="none";
@@ -165,12 +165,12 @@ function botonCancelarEdicion(tema){
      indice.appendChild(auxiliar);
      var tituloA=document.createElement("input");
      tituloA.type="text";
-     var aceptar= document.createElement("button");
-     aceptar.innerHTML="Aceptar";
+     var aceptar= document.createElement("icon");
+    //  aceptar.innerHTML="Aceptar";
      aceptar.className="BotonAceptar";
-    var cancelar= document.createElement("button");
+    var cancelar= document.createElement("icon");
     cancelar.className="BotonCancelar";
-    cancelar.innerHTML="Cancelar";
+    // cancelar.innerHTML="Cancelar";
     auxiliar.appendChild(tituloA);
     auxiliar.appendChild(aceptar);
     auxiliar.appendChild(cancelar);
@@ -204,11 +204,11 @@ function botonCancelarEdicion(tema){
         indice.insertBefore(auxiliar,tema);
         var tituloA=document.createElement("input");
         tituloA.type="text";
-        var aceptar= document.createElement("button");
-        aceptar.innerHTML="Aceptar";
+        var aceptar= document.createElement("icon");
+        // aceptar.innerHTML="Aceptar";
         aceptar.className="BotonAceptar";
-       var cancelar= document.createElement("button");
-       cancelar.innerHTML="Cancelar";
+       var cancelar= document.createElement("icon");
+    //    cancelar.innerHTML="Cancelar";
        cancelar.className="BotonCancelar";
        auxiliar.appendChild(tituloA);
        auxiliar.appendChild(aceptar);

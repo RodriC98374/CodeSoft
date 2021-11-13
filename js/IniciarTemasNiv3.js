@@ -24,8 +24,8 @@ var Temas=[];
 },2000);
 /*-------------------------------------------Primer aceptar-------------------------------- */
 function PrimerAceptar(subtitulo){
-var aceptar= document.createElement("button");
-aceptar.innerHTML="Aceptar";
+var aceptar= document.createElement("icon");
+// aceptar.innerHTML="Aceptar";
 aceptar.className="BotonAceptar";
 subtitulo.appendChild(aceptar);
 aceptar.onclick=function(){

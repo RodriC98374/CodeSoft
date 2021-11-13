@@ -6,11 +6,11 @@ nuevoTema.style.display="none";
 var Titulo = document.createElement("input");
 Titulo.id= "temaN"
 var separador1 = document.createElement("br");
-var aceptar= document.createElement("button");
-aceptar.innerHTML="Aceptar";
+var aceptar= document.createElement("icon");
+// aceptar.innerHTML="Aceptar";
 aceptar.id="btn-aceptar";
-var cancelar= document.createElement("button");
-cancelar.innerHTML="cancelar";
+var cancelar= document.createElement("icon");
+// cancelar.innerHTML="cancelar";
 cancelar.id="btn-cancelar";
 Titulo.type= "text";
 indice.insertBefore(Titulo,nuevoTema);
@@ -56,14 +56,14 @@ btn_cancelar.onclick=function(){
 };
 //botones borrar y editar de cada tema
 function botonesTemas(Tema){
-    var borrarT = document.createElement("button");
-    borrarT.innerHTML="Borrar";
+    var borrarT = document.createElement("icon");
+    // borrarT.innerHTML="Borrar";
     borrarT.className="BorrarT";
-    var editarT= document.createElement("button");
-    editarT.innerHTML="Editar";
+    var editarT= document.createElement("icon");
+    // editarT.innerHTML="Editar";
     editarT.className="EditarT";
-    var añadirT=document.createElement("button");
-    añadirT.innerHTML="Añadir";
+    var añadirT=document.createElement("icon");
+    // añadirT.innerHTML="Añadir";
     añadirT.className="AñadirT";
     Tema.appendChild(editarT);
     Tema.appendChild(borrarT);
@@ -88,11 +88,11 @@ document.onclick=function(a){
             TituloEdit.value=Btns_editar[i].parentNode.firstChild.innerHTML;
             TituloEdit.className="Edit_Tit_tem";
             Btns_editar[i].parentNode.appendChild(TituloEdit);
-            var aceptar = document.createElement("button");
-            aceptar.innerHTML="Aceptar";
+            var aceptar = document.createElement("icon");
+            // aceptar.innerHTML="Aceptar";
             aceptar.className="Tem_edit_acep";
-            var cancelar = document.createElement("button");
-            cancelar.innerHTML="Cancelar";
+            var cancelar = document.createElement("icon");
+            // cancelar.innerHTML="Cancelar";
             cancelar.className="Tem_edit_can";
             Btns_editar[i].parentNode.appendChild(aceptar);
             Btns_editar[i].parentNode.appendChild(cancelar);
@@ -141,11 +141,11 @@ document.onclick=function(a){
             var TituloTema= document.createElement("input");
             TituloTema.type="text";
             EntreTema.appendChild(TituloTema);
-            var aceptar= document.createElement("button");
-            aceptar.innerHTML="Aceptar";
+            var aceptar= document.createElement("icon");
+            // aceptar.innerHTML="Aceptar";
             aceptar.className="Ent_acep";
-            var cancelar= document.createElement("button");
-            cancelar.innerHTML="Cancelar";
+            var cancelar= document.createElement("icon");
+            // cancelar.innerHTML="Cancelar";
             cancelar.className="Ent_can";
             EntreTema.appendChild(aceptar);
             EntreTema.appendChild(cancelar);

@@ -234,23 +234,60 @@ strong{
 /* FIN SECCION TEMAS */
 
 
-/* INICIO FOOTER */
+/* INICIO ICONOS */
 
-footer{
-    background-color: #1184b97c;
-    width: 100%;
-    
-    position: absolute;
-    bottom: 0;
+.BotonEditar::before {
+    /* content: "\f067"; */
+    /* font-family:"Font Awesome 5 Free"; */
+    /* font-size: larger; */
+    font-family: 'Material Icons';
+    content: "\e3c9";
+    color: #ffc400;
+    cursor: pointer;
+    font-size: 25px;
 }
 
-.made{
-    font-size: 12px;
-    color: #fafafa;
-    text-align: center;
-    padding: 8px 0;
-
+.BotonBorrar::before{
+    font-family: 'Material Icons';
+    content: "\e15d";
+    color: #ef233c;
+    cursor: pointer;
+    font-size: 25px;
 }
+
+.BotonAñadir::before{
+    font-family: 'Material Icons';
+    content: "\e148";
+    color: #06d6a0;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.BotonAceptar::before{
+    font-family: 'Material Icons';
+    content: "\e92d";
+    color: #06d6a0;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.BotonCancelar::before{
+    font-family: 'Material Icons';
+    content: "\e888";
+    color: #ef233c;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
 
 
 @media (max-width: 1200px) {
