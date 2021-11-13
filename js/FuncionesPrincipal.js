@@ -46,5 +46,7 @@ CerrarSesion.onclick=function(){
     setTimeout(()=>{window.location.reload();},2000);
 }
 if(localStorage.getItem("Nombre")!=null){
-    NombreU.innerHTML=localStorage.getItem("Nombre");
+    var nom=localStorage.getItem("Nombre");
+    nom=nom.split(" ");
+    NombreU.innerHTML=nom[0];
 }

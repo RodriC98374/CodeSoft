@@ -1,5 +1,7 @@
 var NombreU=document.getElementById("NombreUsuario");
-NombreU.innerHTML=localStorage.getItem("Nombre");
+var nom=localStorage.getItem("Nombre");
+    nom=nom.split(" ");
+    NombreU.innerHTML=nom[0];
 var CerrarSesion=document.getElementById("CerrarSesion");
 CerrarSesion.onclick=function(){
     localStorage. clear();
