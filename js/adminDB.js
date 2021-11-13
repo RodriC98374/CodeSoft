@@ -83,39 +83,70 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     let warnings = "";
 
 
-  if(name.value.length <6){
-      parrafo.innerHTML = "El nombre no es valido <br>"
-      window.alert("El nombre no es valido");
-      entrar = true
-  }
-  
-  if(!regexEmail.test(email.value)){
-      parrafo.innerHTML = "El email no es valido <br>"
-      window.alert("El email no es valido");
-      entrar = true
-  }
-  
-  if(pasword.value.length < 8){
-      parrafo.innerHTML = "La contraseña no es valida <br>"
-      window.alert("La contraseña no es valida");
-      entrar = true
-  }
-
-  if(pasword2.value.length < 8){
-      parrafo.innerHTML = "La contraseña no es valida <br>"
-      window.alert("La confirmación de la contraseña no es valida");
-      entrar = true
-  }
-  if(pasword2.value != pasword.value){
-      parrafo.innerHTML = "Las contraseñas no son iguales <br>"
-      window.alert("Las contraseñas no son iguales");
-      entrar = true
-  }
-
-  if(entrar == true){
+    if(name.value.length<1 || email.value.length<1 || pasword.value.length<1 || pasword2.value.length<1){
       parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
       window.alert("Ingrese todos los espacios vacios");
-  }else {
+      entrar=true;
+      res=true;
+    }
+    if(name.value.length>40 && entrar==false){
+      parrafo.innerHTML = "El nombre no es valido <br>"
+      window.alert("El nombre no es valido");
+      res=true;
+  
+    }
+    if(name.value.length <6 && entrar==false){
+        parrafo.innerHTML = "El nombre no es valido <br>"
+        window.alert("El nombre no es valido");
+        res=true;
+    }
+    
+    if(!regexEmail.test(email.value) && entrar==false){
+        parrafo.innerHTML = "El email no es valido <br>"
+        window.alert("El email no es valido");
+        res=true;
+    }
+    
+    if(pasword.value.length < 8  && entrar==false){
+        parrafo.innerHTML = "La contraseña no es valida <br>"
+        window.alert("La contraseña no es valida");
+        res=true;
+    }
+    if(pasword.value.length>20 && entrar==false){
+      parrafo.innerHTML = "La contraseña no es valida <br>"
+      window.alert("La contraseña no es valida");
+      res=true;
+  }
+  
+    if(pasword2.value.length < 8 && pasword2.value.length<20 && entrar==false){
+        parrafo.innerHTML = "La contraseña no es valida <br>"
+        window.alert("La confirmación de la contraseña no es valida");
+        res=true;
+    }
+    if(pasword2.value.length>20 && entrar==false){
+      parrafo.innerHTML = "La contraseña no es valida <br>"
+      window.alert("La confirmación de la contraseña no es valida");
+      res=true;
+  }
+  
+    if(pasword2.value != pasword.value && entrar==false){
+        parrafo.innerHTML = "Las contraseñas no son iguales <br>"
+        window.alert("Las contraseñas no son iguales");
+        res=true;
+    }
+  
+    if(res==false) {
+    //Aqui comprueba si existe un usuario con ese correo
+    if(Existe(email.value)==0){
+      parrafo.innerHTML = "Registrado Correctamente"
+      window.alert("Registrado Correctamente");
+      res=true;
+      SaveAdmin(Usuario);
+      }else{
+        alert("Ya existe ese usuario");
+      }
+    }
+ /* else {
     //Aqui comprueba si existe un usuario con ese correo
       if(Existe(email.value)==0){
       parrafo.innerHTML = "Registrado Correctamente"
@@ -125,7 +156,7 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       }else{
         alert("Ya existe ese usuario");
       }
-  }
+  }*/
   
   })
   //Esta funcion es la que recorre la lista de usuarios para saber si ya existe
