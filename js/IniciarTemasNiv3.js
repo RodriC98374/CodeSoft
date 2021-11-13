@@ -15,6 +15,7 @@ var Temas=[];
  for(var i=0 ;i<Temas.length;i++){
      if(Temas[i].childNodes.length==1){
          var PrimerSub= document.createElement("input");
+         PrimerSub.className="SubAux";
          PrimerSub.type= "text";
          Temas[i].appendChild(PrimerSub);
          PrimerAceptar(Temas[i]);
@@ -25,6 +26,7 @@ var Temas=[];
 function PrimerAceptar(subtitulo){
 var aceptar= document.createElement("button");
 aceptar.innerHTML="Aceptar";
+aceptar.className="BotonAceptar";
 subtitulo.appendChild(aceptar);
 aceptar.onclick=function(){
     if(subtitulo.childNodes[1].value==""){

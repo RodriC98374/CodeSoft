@@ -2,7 +2,7 @@ var Usuarios=[];
 var errores=document.getElementsByClassName("alerta");
 for(var i=0;i<errores.length;i++){
     errores[i].style.display="none";
-    errores[i].style.color="red";
+    errores[i].style.color="yellow";
 }
 /*----------------Base de datos------------------------------------*/
   // Import the functions you need from the SDKs you need
@@ -48,16 +48,32 @@ Registrar.onclick=function(){
         errores[0].style.display="block";
         Aceptar=1;
     }else{
+        if(/^[A-Za-z\s]+$/.test(nombre.value)){
+            errores[5].style.display="none";
+        }else{errores[5].style.display="block";
+        Aceptar=1;}
+        if(nombre.value.length<6){
+            errores[6].style.display="block";
+            Aceptar=1;
+        }else{errores[6].style.display="none";}
+        if(nombre.value.length>40){
+            errores[7].style.display="block";
+            Aceptar=1;
+        }else{errores[7].style.display="none";}
         errores[0].style.display="none";
         if(contraseña.value.length<8 ){
             errores[1].style.display="block";
             Aceptar=1;
             }else{errores[1].style.display="none";}
-            if(contraseña.value!=Repetir.value){
+        if(contraseña.value.length>20 ){
+            errores[4].style.display="block";
+            Aceptar=1;
+            }else{errores[4].style.display="none";}
+        if(contraseña.value!=Repetir.value){
                 errores[2].style.display="block";
                 Aceptar=1;
             }else{errores[2].style.display="none";}
-            if(!emailRegex.test(correo.value)){
+        if(!emailRegex.test(correo.value)){
                 errores[3].style.display="block";
                 Aceptar=1;
             }else{errores[3].style.display="none";}
@@ -74,12 +90,13 @@ Registrar.onclick=function(){
             localStorage.setItem("Sesion","Activo");
             localStorage.setItem("Nombre",Nombre)
             //location.href="../public/index.html";
+            alert("Reistrado correctamente");
             setTimeout(()=>{location.href="../public/index.html";},2000);   
         }else{
-            alert("Ese usuario ya existe");
+            alert("Ya exite otra cuenta registrada con ese correo electronico");
         }
 
-    }
+    }//else{alert("Aprende a rellenar un formulario");}
     
 
  }

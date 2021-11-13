@@ -40,7 +40,7 @@ const firebaseConfig = {
                 }
                 
             }else{
-                alert("Registrate");
+                alert("Datos incorrectos");
             }
         }
 
