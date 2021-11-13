@@ -37,6 +37,15 @@ const firebaseConfig = {
       });  
     });
 });
+db.collection("Usuarios").get().then(function(BaseUsuarios){
+     
+  BaseUsuarios.forEach(function(doc){
+    Usuarios.push({
+        Descripcion: doc.data().Usuario,
+        ID: doc.id
+    });  
+  });
+});
 
 
   const MJSOK =()=>{
@@ -77,13 +86,10 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
 
     const name=document.getElementById("nombre")
     const email=document.getElementById("correo")
-    const pasword=document.getElementById("contraseña")
-    const pasword2=document.getElementById("repcontraseña")
     const parrafo = document.getElementById("warnings")
-    let warnings = "";
 
 
-    if(name.value.length<1 || email.value.length<1 || pasword.value.length<1 || pasword2.value.length<1){
+    if(name.value.length<1 || email.value.length<1){
       parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
       window.alert("Ingrese todos los espacios vacios");
       entrar=true;
@@ -106,66 +112,37 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
         window.alert("El email no es valido");
         res=true;
     }
-    
-    if(pasword.value.length < 8  && entrar==false){
-        parrafo.innerHTML = "La contraseña es muy corta <br>"
-        window.alert("La contraseña es muy corta");
-        res=true;
-    }
-    if(pasword.value.length>20 && entrar==false){
-      parrafo.innerHTML = "La contraseña es muy larga <br>"
-      window.alert("La contraseña es muy larga");
-      res=true;
-  }
-  
-    if(pasword2.value.length < 8 && pasword2.value.length<20 && entrar==false){
-        parrafo.innerHTML = "La confirmacion de la contraseña es muy corta <br>"
-        window.alert("La confirmacion de la contraseña es muy corta");
-        res=true;
-    }
-    if(pasword2.value.length>20 && entrar==false){
-      parrafo.innerHTML = "La confirmacion de la contraseña es muy larga <br>"
-      window.alert("La confirmacion de la contraseña es muy larga");
-      res=true;
-  }
-  
-    if(pasword2.value != pasword.value && entrar==false){
-        parrafo.innerHTML = "Las contraseñas no son iguales <br>"
-        window.alert("Las contraseñas no son iguales");
-        res=true;
-    }
   
     if(res==false) {
     //Aqui comprueba si existe un usuario con ese correo
-    if(Existe(email.value)==0){
-      parrafo.innerHTML = "Registrado Correctamente"
-      window.alert("Registrado Correctamente");
+    if(Existe(email.value,name.value)==0){
+      var contra= Existe2(email.value);
+      parrafo.innerHTML = "Su contraseña es: "+contra;
       res=true;
-      SaveAdmin(Usuario);
-      }else{
-        alert("Ya existe ese usuario");
+      }
+      else{
+        parrafo.innerHTML = "El Administrador no existe";
+        window.alert("El Administrador no existe");
       }
     }
- /* else {
-    //Aqui comprueba si existe un usuario con ese correo
-      if(Existe(email.value)==0){
-      parrafo.innerHTML = "Registrado Correctamente"
-      window.alert("Registrado Correctamente");
-      res=true;
-      SaveAdmin(Usuario);
-      }else{
-        alert("Ya existe ese usuario");
-      }
-  }*/
   
   })
   //Esta funcion es la que recorre la lista de usuarios para saber si ya existe
-  function Existe(a){
-    var encontrado=0;
+  function Existe(a,b){
+    var encontrado=1;
     for(var i=0;i<Usuarios.length;i++){
-       if(a==Usuarios[i].Descripcion.Correo){
-           encontrado=1;
+       if(a==Usuarios[i].Descripcion.Correo && b==Usuarios[i].Descripcion.Nombre){
+           encontrado=0;
        }
     }
     return encontrado;
+}
+function Existe2(a){
+  var encontrado="";
+  for(var i=0;i<Usuarios.length;i++){
+     if(a==Usuarios[i].Descripcion.Correo){
+         encontrado=Usuarios[i].Descripcion.Contraseña;
+     }
+  }
+  return encontrado;
 }

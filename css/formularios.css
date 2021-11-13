@@ -196,3 +196,22 @@ header{
     color:#ffffff;
     padding-top: 20px;
 }
+.RecPassword{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:#ffffff;
+    padding-top: 20px; 
+}
+.RecPassword:hover{
+    color: #ffc400;
+}
+
+.Volver:hover{
+    color: #ffc400;
+}
+.Volver{
+    width: 50px;
+    margin-right: 20px;
+}
+
