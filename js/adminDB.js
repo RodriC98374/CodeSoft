@@ -90,14 +90,14 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       res=true;
     }
     if(name.value.length>40 && entrar==false){
-      parrafo.innerHTML = "El nombre no es valido <br>"
-      window.alert("El nombre no es valido");
+      parrafo.innerHTML = "El nombre es demasido largo <br>"
+      window.alert("El nombre es demasido largo");
       res=true;
   
     }
     if(name.value.length <6 && entrar==false){
-        parrafo.innerHTML = "El nombre no es valido <br>"
-        window.alert("El nombre no es valido");
+        parrafo.innerHTML = "El nombre es demasiado corto <br>"
+        window.alert("El nombre es demasiado corto");
         res=true;
     }
     
@@ -108,24 +108,24 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     }
     
     if(pasword.value.length < 8  && entrar==false){
-        parrafo.innerHTML = "La contraseña no es valida <br>"
-        window.alert("La contraseña no es valida");
+        parrafo.innerHTML = "La contraseña es muy corta <br>"
+        window.alert("La contraseña es muy corta");
         res=true;
     }
     if(pasword.value.length>20 && entrar==false){
-      parrafo.innerHTML = "La contraseña no es valida <br>"
-      window.alert("La contraseña no es valida");
+      parrafo.innerHTML = "La contraseña es demasiada larga <br>"
+      window.alert("La contraseña es demasiada larga");
       res=true;
   }
   
     if(pasword2.value.length < 8 && pasword2.value.length<20 && entrar==false){
-        parrafo.innerHTML = "La contraseña no es valida <br>"
-        window.alert("La confirmación de la contraseña no es valida");
+        parrafo.innerHTML = "La confirmacion de la contraseña es muy corta <br>"
+        window.alert("La confirmacion de la contraseña es muy corta");
         res=true;
     }
     if(pasword2.value.length>20 && entrar==false){
-      parrafo.innerHTML = "La contraseña no es valida <br>"
-      window.alert("La confirmación de la contraseña no es valida");
+      parrafo.innerHTML = "La confirmacion de la contraseña es demasiada larga <br>"
+      window.alert("La confirmacion de la contraseña es demasiada larga");
       res=true;
   }
   
