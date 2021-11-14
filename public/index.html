@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="../css/tarjeta.css" />
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
   <script type="text/javascript" src="../js/prefixfree.min.js"></script>
   <title>Contabilidad para todos</title>
 </head>
-
 <body>
   <div class="grid"> 
     <!-- INICIO DEL HEADER -->
@@ -21,7 +23,7 @@
           <a href="index.html" class="logo">
             <img src="../img/Logo.png" alt="LogoContabilidad" />
           </a>
-          <h3>
+          <h3 style="color:white">
             Contabilidad para <br />
             Todos
           </h3>
@@ -80,33 +82,36 @@
       <section class="Secniveles">
 
         <div class="contenedor">
+          
           <section class="niveles">
-
-            <label class="nivel1" id="nivel1">
-              <div class="TituloNivel">
-                <h1>Nivel 1</h1>
+            <div class="col-lg-12">
+              <div class="col-lg-3 tarjeta-wrap" id="nivel1">
+                <div class="tarjeta">
+                  
+                  <div class="adelante card1">
+                  </div>
+                  <div class="atras">
+                    <p>Nivel de dificultad bajo.</p>
+                  </div>
+                </div>
               </div>
-              <div class="ImagenNivel">
-                <img src="../img/Nivel1.png" alt="ImagenNivel1">
+              <div class="col-lg-3 tarjeta-wrap" id="nivel2">
+                <div class="tarjeta">
+                  <div class="adelante card2"></div>
+                  <div class="atras">
+                    <p>Nivel de dificultad medio.</p>
+                  </div>
+                </div>
               </div>
-            </label>
-            <label class="nivel2" id="nivel2">
-              <div class="TituloNivel">
-                <h1>Nivel 2</h1>
+              <div class="col-lg-3 tarjeta-wrap" id="nivel3">
+                <div class="tarjeta">
+                  <div class="adelante card3"></div>
+                  <div class="atras">
+                    <p>Nivel de dificultad alto.</p>
+                  </div>
+                </div>
               </div>
-              <div class="ImagenNivel">
-                <img src="../img/Nivel2.png" alt="ImagenNivel2">
-              </div>
-            </label>
-
-            <label  class="nivel3" id="nivel3">
-              <div class="TituloNivel">
-                <h1>Nivel 3</h1>
-              </div>
-              <div class="ImagenNivel">
-                <img src="../img/Nivel3.png" alt="ImagenNivel3">
-              </div>
-            </label>
+            </div>
           </section>
         </div>
       </section>
@@ -114,8 +119,25 @@
       <!-- FIN SECCIÓN NIVELES -->
 
       <footer class="footer">
-        <p class="made">By CodeSoft</p>
-      </footer>
+        <div>
+        <div>
+          <h1 class="tituloFooter1">Nosotros</h1>
+          <div class="content">
+            <p class="descripcionFooter">Estamos para ayudarte a aprender o ampliar tus conocimientos sobre el maravilloso mundo que nos ofrece la materia de contabalidad, abarcando temas como: Asientos contables, Activos, Pasivos, Libros contables y otros temas que pertenecen a contabilidad basíca así que que estas esperando registrate y comencemos.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h1 class="tituloFooter2">Contanto</h1>
+          <div class="contacto">
+              <img src="../img/contact.png" alt="ImagenContacto" />
+              <h2 class="descripcionFooter">ContabilidadParaTodos@gmail.com</h2>
+          </div>
+        </div>
+      </div>
+       <p class="made">By CodeSoft</p>
+    </footer>
   </div>
 </body>
 

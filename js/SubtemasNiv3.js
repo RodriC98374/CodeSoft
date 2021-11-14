@@ -259,8 +259,8 @@ function CargarSubtemas() {
 /*---------------EDITAR IMAGEN---------------------*/
 function EditarI(contenedor) {
 
-    var btnEImg = document.createElement("button");
-    btnEImg.innerHTML = "Editar";
+    var btnEImg = document.createElement("icon");
+    // btnEImg.innerHTML = "Editar";
     btnEImg.className="BotonEditar";
     contenedor.appendChild(btnEImg);
     btnEImg.onclick = function () {
@@ -285,8 +285,8 @@ function EditarI(contenedor) {
 }
 //----------------------------------Boton cancelar edicion de imagen-------------------------------
 function CancelarEI(contenedor) {
-    var btnCEI = document.createElement('button');
-    btnCEI.innerHTML = "Cancelar";
+    var btnCEI = document.createElement('icon');
+    // btnCEI.innerHTML = "Cancelar";
     btnCEI.className="BotonCancelar";
     contenedor.appendChild(btnCEI);
     btnCEI.onclick = function () {
@@ -300,8 +300,8 @@ function CancelarEI(contenedor) {
 }
 //----------------------------------Boton aceptar edicion de imagen-------------------------------
 function AceptarEI(contenedor) {
-    var btnAEI = document.createElement("button");
-    btnAEI.innerHTML = "Aceptar";
+    var btnAEI = document.createElement("icon");
+    // btnAEI.innerHTML = "Aceptar";
     btnAEI.className="BotonAceptar";
     contenedor.appendChild(btnAEI);
     //console.log(contenedor);
@@ -363,8 +363,8 @@ function AceptarEI(contenedor) {
 
 /*---------------------------------Boton Editar----------------------------*/
 function Editar(subtema) {
-    var Editar = document.createElement("button");
-    Editar.innerHTML = "Editar";
+    var Editar = document.createElement("icon");
+    // Editar.innerHTML = "Editar";
     Editar.className="BotonEditar";
     subtema.appendChild(Editar);
     Editar.onclick = function () {
@@ -447,8 +447,8 @@ function Editar(subtema) {
 /*---------------------------Botones Editar--------------------*/
 /*---------------------------Boton Aceptar (Editar)--------------------*/
 function AceptarE(contenedor) {
-    var btnAE = document.createElement("button");
-    btnAE.innerHTML = "Aceptar";
+    var btnAE = document.createElement("icon");
+    // btnAE.innerHTML = "Aceptar";
     btnAE.className="BotonAceptar";
     contenedor.appendChild(btnAE);
     btnAE.onclick = function () {
@@ -500,8 +500,8 @@ function AceptarE(contenedor) {
 /*---------------------------Botone Cancelar (Editar)--------------------*/
 
 function CancelarE(contenedor) {
-    var btnCE = document.createElement("button");
-    btnCE.innerHTML = "Cancelar";
+    var btnCE = document.createElement("icon");
+    // btnCE.innerHTML = "Cancelar";
     btnCE.className="BotonCancelar";
     contenedor.appendChild(btnCE);
     btnCE.onclick = function () {
@@ -524,8 +524,8 @@ function CancelarE(contenedor) {
 var control = 0;
 /*---------------------------------Boton Añadir------------------------------*/
 function Añadir(subtema) {
-    var añadir = document.createElement('button');
-    añadir.innerHTML = "Añadir";
+    var añadir = document.createElement('icon');
+    // añadir.innerHTML = "Añadir";
     añadir.className="BotonAñadir";
     subtema.appendChild(añadir);
     añadir.onclick = function () {
@@ -628,8 +628,8 @@ function Añadir(subtema) {
 }
 //--------------------------------boton aceptar de imagen---------------------
 function aceptarI(contenedor) {
-    var acptImg = document.createElement("button");
-    acptImg.innerHTML = "Aceptar";
+    var acptImg = document.createElement("icon");
+    // acptImg.innerHTML = "Aceptar";
     acptImg.className="BotonAceptar";
     contenedor.appendChild(acptImg);
     acptImg.onclick = function () {
@@ -691,8 +691,8 @@ function mostrar(a) {
 
 /*--------------------------------Boton borrar------------------------------*/
 function Borrar(subtema) {
-    var borrar = document.createElement('button');
-    borrar.innerHTML = "Borrar";
+    var borrar = document.createElement('icon');
+    // borrar.innerHTML = "Borrar";
     borrar.className="BotonBorrar";
     subtema.appendChild(borrar);
     borrar.onclick = function () {
@@ -709,8 +709,8 @@ function Borrar(subtema) {
 }
 /*-------------------------------Boton Cancelar---------------------------*/
 function cancelar(subtema) {
-    var cancelar = document.createElement("button");
-    cancelar.innerHTML = "Cancelar";
+    var cancelar = document.createElement("icon");
+    // cancelar.innerHTML = "Cancelar";
     cancelar.className="BotonCancelar";
     subtema.appendChild(cancelar);
     cancelar.onclick = function () {
@@ -721,8 +721,8 @@ function cancelar(subtema) {
 }
 /*-------------------------------Boton Aceptar----------------------------*/
 function aceptar(subtema) {
-    var aceptar = document.createElement("button");
-    aceptar.innerHTML = "Aceptar";
+    var aceptar = document.createElement("icon");
+    // aceptar.innerHTML = "Aceptar";
     aceptar.className="BotonAceptar";
     subtema.appendChild(aceptar);
     aceptar.onclick = function () {
