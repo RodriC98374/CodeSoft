@@ -195,6 +195,35 @@ footer{
 
 }
 
+.descripcionFooter{
+    color: #eff3f5;
+    margin: 15px;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.tituloFooter1{
+    margin-top: 15px;
+    color: #eff3f5;
+    font-size: 25px;
+}
+
+.tituloFooter2{
+    color: #eff3f5;
+    font-size: 25px;
+}
+
+.contacto{
+    display: flex;
+}
+
+.contacto img{
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 36px;
+    height: 36px;
+}
+
 /*      RESPONSIVE    */
 
 .grid {
