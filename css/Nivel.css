@@ -559,5 +559,11 @@ strong{
         width: 100%;
     }
 }
+body{
+    background-image: url("../img/fondoAlt1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 

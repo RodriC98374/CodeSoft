@@ -404,6 +404,12 @@ footer{
 #CerrarSesion:hover{
     color: #ffc400;
 }
+body{
+    background-image: url("../img/fondoAlt.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 
 
