@@ -191,26 +191,26 @@ footer{
     font-size: 12px;
     color: #fafafa;
     text-align: center;
-    padding: 8px 0;
 
 }
 
 .descripcionFooter{
     color: #eff3f5;
-    margin: 15px;
+    margin: 7px;
     font-weight: lighter;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .tituloFooter1{
-    margin-top: 15px;
+    margin-top: 7px;
     color: #eff3f5;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .tituloFooter2{
+    margin-top: 7px;
     color: #eff3f5;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .contacto{
@@ -218,10 +218,11 @@ footer{
 }
 
 .contacto img{
-    margin-top: 5px;
-    margin-left: 15px;
-    width: 36px;
-    height: 36px;
+    margin-top: 1px;
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 25px;
+    height: 25px;
 }
 
 /*      RESPONSIVE    */
