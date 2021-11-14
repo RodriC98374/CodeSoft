@@ -91,7 +91,7 @@
     height:250px;
     background-size: 100% 100%;
     background-repeat:no-repeat;
-    background-image: url(../img/Nivel1.png);
+    background-image: url(../img/Nivel1_1.png);
     
   }
 
@@ -103,7 +103,7 @@
     height:250px;
     background-size: 100% 100%;
     background-repeat:no-repeat;
-    background-image: url(../img/Nivel2.png);
+    background-image: url(../img/Nivel2_1.png);
   }
 
   .card3{
@@ -114,5 +114,5 @@
     height:250px;
     background-size: 100% 100%;
     background-repeat:no-repeat;
-    background-image: url(../img/Nivel3.png);
+    background-image: url(../img/Nivel3_1.png);
   }
