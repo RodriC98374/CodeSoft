@@ -91,7 +91,7 @@ Registrar.onclick=function(){
             localStorage.setItem("Nombre",Nombre)
             //location.href="../public/index.html";
             alert("Reistrado correctamente");
-            setTimeout(()=>{location.href="../public/index.html";},2000);   
+            setTimeout(()=>{location.href="../index.html";},2000);   
         }else{
             alert("Ya exite otra cuenta registrada con ese correo electronico");
         }

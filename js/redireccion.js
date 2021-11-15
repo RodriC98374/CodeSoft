@@ -1,17 +1,17 @@
 var logo=document.getElementsByClassName("logo");
 logo[0].onclick=function(){
     if(localStorage.getItem("Rol")=="Administrador"){
-        location.href="../public/indexAdmonistrador.html";
+        location.href="../public/IndexAdmonistrador.html";
     }else{
-        location.href="../public/index.html";
+        location.href="../index.html";
     }
 }
 var icono=document.getElementsByClassName("BtnHome");
 icono[0].onclick=function(){
     if(localStorage.getItem("Rol")=="Administrador"){
-        location.href="../public/indexAdmonistrador.html";
+        location.href="../public/IndexAdmonistrador.html";
     }else{
-        location.href="../public/index.html";
+        location.href="../index.html";
     }
 }
 

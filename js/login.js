@@ -34,9 +34,9 @@ const firebaseConfig = {
                 localStorage.setItem("Nombre",NUser(correo.value,contraseña.value));
                 localStorage.setItem("Rol",RUser(correo.value,contraseña.value))
                 if(localStorage.getItem("Rol")=="Administrador"){
-                    location.href="../public/indexAdmonistrador.html";
+                    location.href="../public/IndexAdmonistrador.html";
                 }else{
-                    location.href="../public/index.html";
+                    location.href="../index.html";
                 }
                 
             }else{

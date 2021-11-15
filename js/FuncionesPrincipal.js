@@ -22,23 +22,23 @@ var Nivel2= document.getElementById("nivel2");
 var Nivel3= document.getElementById("nivel3");
 Nivel1.onclick=function(){
     if(localStorage.getItem("Sesion")=="inactivo"){
-        location.href="../public/login.html";
+        location.href="public/login.html";
     }else{
-        location.href="../public/nivel1.html";
+        location.href="public/nivel1.html";
     }
 }
 Nivel2.onclick=function(){
     if(localStorage.getItem("Sesion")=="inactivo"){
-        location.href="../public/login.html";
+        location.href="public/login.html";
     }else{
-        location.href="../public/nivel2.html";
+        location.href="public/nivel2.html";
     }
 }
 Nivel3.onclick=function(){
     if(localStorage.getItem("Sesion")=="inactivo"){
-        location.href="../public/login.html";
+        location.href="public/login.html";
     }else{
-        location.href="../public/nivel3.html";
+        location.href="public/nivel3.html";
     }
 }
 CerrarSesion.onclick=function(){
