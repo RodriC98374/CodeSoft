@@ -1,3 +1,6 @@
+if(localStorage.getItem("Rol")!="Administrador"){
+    location.href="../index.html";
+}
 var NombreU=document.getElementById("NombreUsuario");
 var nom=localStorage.getItem("Nombre");
     nom=nom.split(" ");

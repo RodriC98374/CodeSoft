@@ -1,3 +1,6 @@
+if(localStorage.getItem("Rol")!="Administrador"){
+  location.href="../index.html";
+}
 //Este arreglo es para ver si el usuario ya existe
 var Usuarios=[];
 // @jhon coneccion con la base de datods

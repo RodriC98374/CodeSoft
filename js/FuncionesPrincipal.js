@@ -50,3 +50,4 @@ if(localStorage.getItem("Nombre")!=null){
     nom=nom.split(" ");
     NombreU.innerHTML=nom[0];
 }
+console.log(bowser.name, bowser.version);

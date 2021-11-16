@@ -1,3 +1,7 @@
+if(localStorage.getItem("Rol")!="Administrador" && localStorage.getItem("Rol")!="Estudiante"){
+    location.href="../index.html";
+}
+
 var logo=document.getElementsByClassName("logo");
 logo[0].onclick=function(){
     if(localStorage.getItem("Rol")=="Administrador"){
