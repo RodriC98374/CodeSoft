@@ -59,6 +59,7 @@ const firebaseConfig = {
   }
 
 let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+let regexNombre=/^[A-Za-z\s]+$/
 
 
   $("#btnsave").on('click',()=>{
@@ -84,82 +85,86 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     const pasword2=document.getElementById("repcontraseña")
     const parrafo = document.getElementById("warnings")
     let warnings = "";
-
-
-    if(name.value.length<1 || email.value.length<1 || pasword.value.length<1 || pasword2.value.length<1){
-      parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
-      window.alert("Ingrese todos los espacios vacios");
+  
+    var mensaje= ""  
+    if(name.value.length<1 && email.value.length<1 && pasword.value.length<1 && pasword2.value.length<1){
+      mensaje=mensaje+"*Ingrese todos los espacios vacíos <br>"
+      window.alert("Ingrese todos los espacios vacíos");
       entrar=true;
       res=true;
     }
+    if(name.value.length<1 || email.value.length<1 || pasword.value.length<1 || pasword2.value.length<1 && entrar==false){
+      mensaje=mensaje+"*Ingrese todos los espacios vacíos <br>"
+      window.alert("Ingrese todos los espacios vacíos");
+      res=true;
+    }
+    if(!regexNombre.test(name.value) && entrar==false ){
+      mensaje=mensaje+"*No ingrese Caracteres especiales en Nombre <br>"
+      window.alert("No ingrese Caracteres especiales en Nombre");
+      res=true;
+    }
     if(name.value.length>40 && entrar==false){
-      parrafo.innerHTML = "Nombre muy largo <br>"
+      mensaje=mensaje+"*Nombre muy largo <br> "
       window.alert("Nombre muy largo");
       res=true;
   
     }
     if(name.value.length <6 && entrar==false){
-        parrafo.innerHTML = "Nombre muy corto <br>"
+      mensaje=mensaje+"*Nombre muy corto <br> "      
         window.alert("Nombre muy corto");
         res=true;
     }
     
     if(!regexEmail.test(email.value) && entrar==false){
-        parrafo.innerHTML = "El email no es valido <br>"
+      mensaje=mensaje+"*El email no es valido<br> "    
         window.alert("El email no es valido");
         res=true;
     }
     
     if(pasword.value.length < 8  && entrar==false){
-        parrafo.innerHTML = "La contraseña es muy corta <br>"
+      mensaje=mensaje+"*La contraseña es muy corta <br> " 
         window.alert("La contraseña es muy corta");
         res=true;
     }
     if(pasword.value.length>20 && entrar==false){
-      parrafo.innerHTML = "La contraseña es muy larga <br>"
+      mensaje=mensaje+"*La contraseña es muy larga <br> "
       window.alert("La contraseña es muy larga");
       res=true;
   }
   
     if(pasword2.value.length < 8 && pasword2.value.length<20 && entrar==false){
-        parrafo.innerHTML = "La confirmacion de la contraseña es muy corta <br>"
-        window.alert("La confirmacion de la contraseña es muy corta");
+      mensaje=mensaje+"*La Confirmación de la contraseña es muy corta <br> "
+        window.alert("La Confirmación de la contraseña es muy corta");
         res=true;
     }
     if(pasword2.value.length>20 && entrar==false){
-      parrafo.innerHTML = "La confirmacion de la contraseña es muy larga <br>"
-      window.alert("La confirmacion de la contraseña es muy larga");
+      mensaje=mensaje+"*La Confirmación de la contraseña es muy larga <br> "
+      window.alert("La Confirmación de la contraseña es muy larga");
       res=true;
   }
   
     if(pasword2.value != pasword.value && entrar==false){
-        parrafo.innerHTML = "Las contraseñas no son iguales <br>"
+      mensaje=mensaje+"*Las contraseñas no son iguales <br> "
         window.alert("Las contraseñas no son iguales");
         res=true;
     }
-  
+    parrafo.innerHTML = mensaje   
     if(res==false) {
     //Aqui comprueba si existe un usuario con ese correo
     if(Existe(email.value)==0){
-      parrafo.innerHTML = "Registrado Correctamente"
+      parrafo.innerHTML = ""
       window.alert("Registrado Correctamente");
       res=true;
+      name.value=""
+      email.value=""
+      pasword.value=""
+      pasword2.value=""
       SaveAdmin(Usuario);
       }else{
         alert("Ya existe ese usuario");
+        parrafo.innerHTML = "El usuario ya existe"
       }
     }
- /* else {
-    //Aqui comprueba si existe un usuario con ese correo
-      if(Existe(email.value)==0){
-      parrafo.innerHTML = "Registrado Correctamente"
-      window.alert("Registrado Correctamente");
-      res=true;
-      SaveAdmin(Usuario);
-      }else{
-        alert("Ya existe ese usuario");
-      }
-  }*/
   
   })
   //Esta funcion es la que recorre la lista de usuarios para saber si ya existe
