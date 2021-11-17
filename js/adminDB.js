@@ -88,15 +88,17 @@ let regexNombre=/^[A-Za-z\s]+$/
   
     var mensaje= ""  
     if(name.value.length<1 && email.value.length<1 && pasword.value.length<1 && pasword2.value.length<1){
-      mensaje=mensaje+"*Ingrese todos los espacios vacíos <br>"
+      parrafo.innerHTML="Ingrese todos los espacios vacíos"
       window.alert("Ingrese todos los espacios vacíos");
       entrar=true;
       res=true;
     }
-    if(name.value.length<1 || email.value.length<1 || pasword.value.length<1 || pasword2.value.length<1 && entrar==false){
+    if(name.value.length<1 || email.value.length<1 || pasword.value.length<1 || pasword2.value.length<1){
+      if(entrar==false){
       mensaje=mensaje+"*Ingrese todos los espacios vacíos <br>"
       window.alert("Ingrese todos los espacios vacíos");
       res=true;
+      }
     }
     if(!regexNombre.test(name.value) && entrar==false ){
       mensaje=mensaje+"*No ingrese Caracteres especiales en Nombre <br>"
@@ -148,7 +150,9 @@ let regexNombre=/^[A-Za-z\s]+$/
         window.alert("Las contraseñas no son iguales");
         res=true;
     }
-    parrafo.innerHTML = mensaje   
+    if(entrar==false){
+    parrafo.innerHTML = mensaje 
+    }  
     if(res==false) {
     //Aqui comprueba si existe un usuario con ese correo
     if(Existe(email.value)==0){
