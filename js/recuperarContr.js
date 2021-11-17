@@ -121,8 +121,8 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
       res=true;
       }
       else{
-        parrafo.innerHTML = "El Administrador no existe";
-        window.alert("El Administrador no existe");
+        parrafo.innerHTML = "El Usuario no existe";
+        window.alert("El Usuario no existe");
       }
     }
   
