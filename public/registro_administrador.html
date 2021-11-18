@@ -87,32 +87,14 @@
                       <div class="form-group">
                         <label>Contraseña</label> 
                         <span class="material-icons-outlined IconEye" id="Eye">visibility</span>
-                        <input id="contraseña" type="password" placeholder="Ingrese la contraseña" class="form-control passwd" onkeypress="return sololetrasyCar(event)">
-                        <script>
-                          function sololetrasyCar(e){
-                            key= e.keyCode || e.which;
-                            teclado= String.fromCharCode(key).toLowerCase();
-                            letras="abcdefghigklmnopqrstuvwqyz.,;:_-1234567890";
-                            especiales="8-37-38-46-164";
-                            teclado_especial=false;
-                            for(var i in especiales){
-                              if (key==especiales[i]) {
-                                teclado_especial=true;
-                                break;
-                               }
-                             }
-                             if (letras.indexOf(teclado)==-1 && !teclado_especial) {
-                               return false;
-                               
-                             }
-                          }
-                        </script>
+                        <input id="contraseña" type="password" placeholder="Ingrese la contraseña" class="form-control passwd" >
+                        
                       </div>
 
                       <div class="form-group">
                         <label>Repetir Contraseña</label> 
                         <span class="material-icons-outlined IconEye1" id="Eye">visibility</span>
-                        <input id="repcontraseña" type="password" placeholder="Repita la Contraseña" class="form-control passwd" onkeypress="return sololetrasyCar(event)">
+                        <input id="repcontraseña" type="password" placeholder="Repita la Contraseña" class="form-control passwd">
 
                       </div>
 
