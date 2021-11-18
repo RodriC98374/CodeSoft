@@ -1,7 +1,10 @@
 if(localStorage.getItem("Rol")!="Administrador" && localStorage.getItem("Rol")!="Estudiante"){
     location.href="../index.html";
 }
-
+ var contenedor =document.getElementById("contenedor_carga");
+ if(localStorage.getItem("Rol")=="Administrador"){
+     contenedor.style.display="none";
+ }
 var logo=document.getElementsByClassName("logo");
 logo[0].onclick=function(){
     if(localStorage.getItem("Rol")=="Administrador"){
