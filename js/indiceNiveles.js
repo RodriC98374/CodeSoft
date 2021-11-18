@@ -13,7 +13,7 @@ function añadirSubtemas(){
         for(var j=0;j<contSubtemas.length;j++){
            console.log("xxxxxxx");
             var subt= document.createElement("h5");
-            subt.innerHTML="<a href='#"+contSubtemas[j].firstChild.innerHTML+"'>"+contSubtemas[j].firstChild.innerHTML+"</a>";
+            subt.innerHTML="<a href='#"+contSubtemas[j].id+"'>"+contSubtemas[j].firstChild.innerHTML+"</a>";
             subt.title=contSubtemas[j].firstChild.innerHTML;
             subt.style.display="block";
             divInd.appendChild(subt);  
