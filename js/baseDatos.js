@@ -57,7 +57,8 @@ var Nivel= document.getElementById("cont");
         Tema.className="Tema";
         Tema.id=LisTemas[i].ID;
         var Titulo= document.createElement("label");
-        Titulo.innerHTML=LisTemas[i].Descripcion.Titulo
+        Titulo.innerHTML=LisTemas[i].Descripcion.Titulo;
+        
         Tema.appendChild(Titulo);
         indice.insertBefore(Tema,nuevoTema);
         //Botones
@@ -73,6 +74,7 @@ var Nivel= document.getElementById("cont");
         tituloAux.style.display="none"
         var ID= document.createElement("label");
         ID.innerHTML=LisTemas[i].Descripcion.ID;
+       
         ID.style.display="none";
         Tema.appendChild(ID);
         /*------------Añadir titulos-----------------------*/

@@ -90,10 +90,10 @@ Registrar.onclick=function(){
             localStorage.setItem("Sesion","Activo");
             localStorage.setItem("Nombre",Nombre)
             //location.href="../public/index.html";
-            alert("Reistrado correctamente");
+            alert("Registrado correctamente");
             setTimeout(()=>{location.href="../index.html";},2000);   
         }else{
-            alert("Ya exite otra cuenta registrada con ese correo electronico");
+            alert("Ya existe otra cuenta registrada con ese correo electrónico");
         }
 
     }//else{alert("Aprende a rellenar un formulario");}

@@ -123,7 +123,7 @@ h3{
     /* height: auto;  --> Cambiar cuando terminen de implementar todo  */
 }
 .indice{
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #181b32d6;
     float: left;
     margin-top: 3%;
     width: 25%;
@@ -164,7 +164,7 @@ p{
 }
 .contenido{
     /* background-color: #2c2f48; */
-    background-color: rgba(47, 23, 105, 0.3);
+    background-color: #181b32d6;
     border-radius: 40px 5px 5px 40px;
     margin-left: 5%;
     margin-top: 3%;
@@ -231,6 +231,11 @@ strong{
     background-color: rgba(255, 255, 255, 0.521);
     border-radius: 10px;
 }
+label{
+    color:#0bd4c1;
+    font-weight: 600;
+}
+
 /* FIN SECCION TEMAS */
 
 

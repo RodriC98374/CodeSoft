@@ -199,22 +199,26 @@ footer{
     margin: 7px;
     font-weight: lighter;
     font-size: 12px;
+    text-align: left;
 }
 
 .tituloFooter1{
     margin-top: 7px;
     color: #eff3f5;
     font-size: 15px;
+    text-align: left;
 }
 
 .tituloFooter2{
     margin-top: 7px;
     color: #eff3f5;
     font-size: 15px;
+    text-align: left;
 }
 
 .contacto{
     display: flex;
+    text-align: left;
 }
 
 .contacto img{
