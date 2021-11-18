@@ -32,11 +32,25 @@ db.collection("Subtemas").get().then(function (BaseSubtemas) {
 /*-------------------------------Cargar Subtemas------------------------------*/
 function CargarSubtemas() {
     if (L_subtemas.length == 0) {
-        setTimeout(() => { }, 2000);
+       setTimeout(() => { }, 2000);
         //crearSubtema();
 
     } else {
+
         setTimeout(() => { }, 1);
+        var divTemas = cont.getElementsByClassName("TemaC");
+        for(var q=0;q<L_subtemas.length;q++){
+            var valido=0;
+            for(var x=0;x<divTemas.length;x++){
+                if(L_subtemas[q].Descripcion.Tema==divTemas[x].id){
+                    valido=1;
+                }
+            }
+            if(valido==0){
+              //  console.log(L_subtemas[q]);
+               db.collection("Subtemas").doc(L_subtemas[q].ID).delete();
+            }
+        }
         for (var i = 0; i < L_subtemas.length; i++) {
             //setTimeout(() => { }, 3000);
             // console.log(L_subtemas.length);
@@ -44,7 +58,7 @@ function CargarSubtemas() {
             var ID = document.createElement("label");
             ID.innerHTML = L_subtemas[i].Descripcion.ID;
             ID.style.display="none";
-            var divTemas = cont.getElementsByClassName("TemaC");
+            
             var ContTemas;
             /*----------------------------SUBTITULO---------------------*/
             if (L_subtemas[i].Descripcion.Tipo == "Subtitulo") {
@@ -52,28 +66,29 @@ function CargarSubtemas() {
 
 
                 for (var t = 0; t < divTemas.length; t++) {
+                    
                     if (divTemas[t].id == L_subtemas[i].Descripcion.Tema) {
                         ContTemas = divTemas[t];
                         
-                var divSubtitulo = document.createElement("div");
+                         var divSubtitulo = document.createElement("div");
 
-                ContTemas.appendChild(divSubtitulo);
+                        ContTemas.appendChild(divSubtitulo);
 
-                var divContSub = document.createElement("div");
-                divContSub.className = "Subtitulo";
-                divContSub.id = L_subtemas[i].ID;
-                var subtitulo = document.createElement("h3");
+                         var divContSub = document.createElement("div");
+                         divContSub.className = "Subtitulo";
+                        divContSub.id = L_subtemas[i].ID;
+                        var subtitulo = document.createElement("h3");
 
-                subtitulo.innerHTML = L_subtemas[i].Descripcion.Contenido;
-                divContSub.appendChild(subtitulo);
-                divSubtitulo.appendChild(divContSub);
-                //Recuperar ID
+                         subtitulo.innerHTML = L_subtemas[i].Descripcion.Contenido;
+                         divContSub.appendChild(subtitulo);
+                        divSubtitulo.appendChild(divContSub);
+                         //Recuperar ID
 
-                divContSub.appendChild(ID);
-                // cont.appendChild(divContSub);
-                Editar(divContSub);
-                Borrar(divContSub);
-                Añadir(divContSub);
+                         divContSub.appendChild(ID);
+                         // cont.appendChild(divContSub);
+                         Editar(divContSub);
+                          Borrar(divContSub);
+                        Añadir(divContSub);
                     }
                 }
 
