@@ -45,9 +45,9 @@ Registrar.onclick=function(){
     var Aceptar=0; 
     emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     if(nombre.value==""||correo.value==""||contraseña.value==""||Repetir.value==""){
-        errores[0].style.display="block";
+        alert("Llene todos los campos vacíos");
         Aceptar=1;
-    }else{
+    }
         if(/^[A-Za-z\s]+$/.test(nombre.value)){
             errores[5].style.display="none";
         }else{errores[5].style.display="block";
@@ -77,7 +77,7 @@ Registrar.onclick=function(){
                 errores[3].style.display="block";
                 Aceptar=1;
             }else{errores[3].style.display="none";}
-    }
+    
     if(Aceptar==0){
         if(Existe(correo.value)==0 ){
             console.log(Usuarios);
