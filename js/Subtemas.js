@@ -711,15 +711,19 @@ function Borrar(subtema) {
     borrar.className="BotonBorrar";
     subtema.appendChild(borrar);
     borrar.onclick = function () {
-        if (subtema.className == "Subtitulo") {
-            var contSubtema = subtema.parentNode.childNodes;
-            for (var i = 0; i < contSubtema.length; i++) {
-                db.collection("Subtemas").doc(contSubtema[i].id).delete();
+        var confirmacion=confirm("¿Estas seguro de borrar este contenido?\nUna vez borrado no podrá recuperar el contenido");
+        if(confirmacion){
+            if (subtema.className == "Subtitulo") {
+                var contSubtema = subtema.parentNode.childNodes;
+                for (var i = 0; i < contSubtema.length; i++) {
+                    db.collection("Subtemas").doc(contSubtema[i].id).delete();
+                }
+            } else {
+                db.collection("Subtemas").doc(subtema.id).delete();
             }
-        } else {
-            db.collection("Subtemas").doc(subtema.id).delete();
+            setTimeout(() => { window.location.reload(); }, 2000);
         }
-        setTimeout(() => { window.location.reload(); }, 2000);
+        
     }
 }
 /*-------------------------------Boton Cancelar---------------------------*/

@@ -108,8 +108,12 @@ var Nivel= document.getElementById("cont");
     Borrar.className="BotonBorrar";
     tema.appendChild(Borrar);
     Borrar.onclick=function(){
-        db.collection("Temas3").doc(tema.id).delete(); 
-        setTimeout(()=>{window.location.reload();},2000); 
+        var confirmacion=confirm("¿Estas seguro de borrar este Tema?\nUna vez borrado no podrá recuperar el contenido");
+        if(confirmacion){
+            db.collection("Temas3").doc(tema.id).delete(); 
+            setTimeout(()=>{window.location.reload();},2000); 
+        }
+        
     }
  }
  /*---------------------------Boton Añadir-------------------------------------------------------*/
