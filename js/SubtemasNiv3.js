@@ -37,6 +37,19 @@ function CargarSubtemas() {
 
     } else {
         setTimeout(() => { }, 1);
+        var divTemas = cont.getElementsByClassName("TemaC");
+        for(var q=0;q<L_subtemas.length;q++){
+            var valido=0;
+            for(var x=0;x<divTemas.length;x++){
+                if(L_subtemas[q].Descripcion.Tema==divTemas[x].id){
+                    valido=1;
+                }
+            }
+            if(valido==0){
+              //  console.log(L_subtemas[q]);
+               db.collection("Subtemas3").doc(L_subtemas[q].ID).delete();
+            }
+        }
         for (var i = 0; i < L_subtemas.length; i++) {
             //setTimeout(() => { }, 3000);
             // console.log(L_subtemas.length);
@@ -44,7 +57,7 @@ function CargarSubtemas() {
             var ID = document.createElement("label");
             ID.innerHTML = L_subtemas[i].Descripcion.ID;
             ID.style.display="none";
-            var divTemas = cont.getElementsByClassName("TemaC");
+            
             var ContTemas;
             /*----------------------------SUBTITULO---------------------*/
             if (L_subtemas[i].Descripcion.Tipo == "Subtitulo") {
