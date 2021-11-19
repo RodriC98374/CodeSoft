@@ -50,10 +50,10 @@ Registrar.onclick=function(){
     }
         if(/^[A-Za-z\s]+$/.test(nombre.value)){
             errores[5].style.display="none";
-        }else{errores[5].style.display="block";
+        }else{if(nombre.value!=""){errores[5].style.display="block";}
         Aceptar=1;}
         if(nombre.value.length<6){
-            errores[6].style.display="block";
+            if(nombre.value!=""){errores[6].style.display="block";}
             Aceptar=1;
         }else{errores[6].style.display="none";}
         if(nombre.value.length>40){
@@ -62,7 +62,9 @@ Registrar.onclick=function(){
         }else{errores[7].style.display="none";}
         errores[0].style.display="none";
         if(contraseña.value.length<8 ){
-            errores[1].style.display="block";
+            if(contraseña.value!=""){
+                errores[1].style.display="block";
+            }
             Aceptar=1;
             }else{errores[1].style.display="none";}
         if(contraseña.value.length>20 ){
@@ -70,11 +72,15 @@ Registrar.onclick=function(){
             Aceptar=1;
             }else{errores[4].style.display="none";}
         if(contraseña.value!=Repetir.value){
-                errores[2].style.display="block";
+                if(contraseña.value!="" && Repetir.value!=""){
+                    errores[2].style.display="block";
+                }
                 Aceptar=1;
             }else{errores[2].style.display="none";}
         if(!emailRegex.test(correo.value)){
-                errores[3].style.display="block";
+                if(correo.value!=""){
+                    errores[3].style.display="block";
+                }
                 Aceptar=1;
             }else{errores[3].style.display="none";}
     

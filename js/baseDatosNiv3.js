@@ -250,7 +250,7 @@ function botonCancelarEdicion(tema){
      }else{
         for(var i = 2 ;i<listar.length;i++){
             if(listar[i]==tema){
-                contador = (Number(tema.childNodes[7].innerHTML)+Number(listar[i-2].childNodes[7].innerHTML))/2;
+                contador = (Number(tema.childNodes[7].innerHTML)+Number(listar[i-3].childNodes[7].innerHTML))/2;
            }
          }
      }

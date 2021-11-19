@@ -7,6 +7,9 @@
 body{
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to bottom, #3a287a, #00429b, #006dba, #0095ce, #2dbcdc);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 

@@ -101,8 +101,10 @@ let regexNombre=/^[A-Za-z\s]+$/
       }
     }
     if(!regexNombre.test(name.value) && entrar==false ){
-      mensaje=mensaje+"*No ingrese Caracteres especiales en Nombre <br>"
-      window.alert("No ingrese Caracteres especiales en Nombre");
+      if(name.value!=""){
+      mensaje=mensaje+"*No ingrese Caracteres especiales o números en Nombre <br>"
+      window.alert("No ingrese Caracteres especiales o numéricos en Nombre");
+      }
       res=true;
     }
     if(name.value.length>40 && entrar==false){
@@ -112,20 +114,26 @@ let regexNombre=/^[A-Za-z\s]+$/
   
     }
     if(name.value.length <6 && entrar==false){
-      mensaje=mensaje+"*Nombre muy corto <br> "      
+      if(name.value!=""){
+        mensaje=mensaje+"*Nombre muy corto <br> "      
         window.alert("Nombre muy corto");
+      }
         res=true;
     }
     
     if(!regexEmail.test(email.value) && entrar==false){
-      mensaje=mensaje+"*El email no es valido<br> "    
+      if(email.value!=""){
+        mensaje=mensaje+"*El email no es valido<br> "    
         window.alert("El email no es valido");
+      }
         res=true;
     }
     
     if(pasword.value.length < 8  && entrar==false){
-      mensaje=mensaje+"*La contraseña es muy corta <br> " 
+      if(pasword.value!=""){
+        mensaje=mensaje+"*La contraseña es muy corta <br> " 
         window.alert("La contraseña es muy corta");
+      }
         res=true;
     }
     if(pasword.value.length>20 && entrar==false){
@@ -135,8 +143,10 @@ let regexNombre=/^[A-Za-z\s]+$/
   }
   
     if(pasword2.value.length < 8 && pasword2.value.length<20 && entrar==false){
-      mensaje=mensaje+"*La Confirmación de la contraseña es muy corta <br> "
+      if(pasword2.value!=""){
+        mensaje=mensaje+"*La Confirmación de la contraseña es muy corta <br> "
         window.alert("La Confirmación de la contraseña es muy corta");
+      }
         res=true;
     }
     if(pasword2.value.length>20 && entrar==false){
@@ -146,8 +156,10 @@ let regexNombre=/^[A-Za-z\s]+$/
   }
   
     if(pasword2.value != pasword.value && entrar==false){
-      mensaje=mensaje+"*Las contraseñas no son iguales <br> "
+      if(pasword.value!="" && pasword2.value!=""){
+        mensaje=mensaje+"*Las contraseñas no son iguales <br> "
         window.alert("Las contraseñas no son iguales");
+      }
         res=true;
     }
     if(entrar==false){

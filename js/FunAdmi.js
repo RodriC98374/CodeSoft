@@ -15,4 +15,25 @@ Logo[0].onclick=function(){
     
     location.href="../public/IndexAdmonistrador.html";
 }
+window.onresize= function(){
+    window.location.reload();
+}
+window.onload=function(){
+    var res= Math.round(window.devicePixelRatio * 100);
+    console.log(res);
+    var ancho = window.innerWidth;
+    console.log(ancho);
+    if(res<=83 && ancho<=1200 && ancho> 1023){
+        var foo=document.getElementsByClassName("footer");
+        foo[0].style.position="absolute";
+        foo[0].style.bottom="0";
+        
+    }
+    if(res<=63){
+        var foo=document.getElementsByClassName("footer");
+        foo[0].style.position="absolute";
+        foo[0].style.bottom="0";
+        
+    }
+}
 
