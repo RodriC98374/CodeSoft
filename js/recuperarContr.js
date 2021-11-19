@@ -65,7 +65,7 @@ db.collection("Usuarios").get().then(function(BaseUsuarios){
   }
 
 let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-
+let regexNombre=/^[A-Za-z\s]+$/
 
   $("#btnsave").on('click',()=>{
     let Nombre = $("#nombre").val();
@@ -88,30 +88,54 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     const email=document.getElementById("correo")
     const parrafo = document.getElementById("warnings")
 
-
+    var mensaje= ""  
+    if(name.value.length<1 && email.value.length<1){
+      parrafo.innerHTML="Ingrese todos los espacios vacíos"
+      window.alert("Ingrese todos los espacios vacíos");
+      entrar=true;
+      res=true;
+    }
+    if(name.value.length<1 || email.value.length<1){
+      if(entrar==false){
+      mensaje=mensaje+"*Ingrese todos los espacios vacíos <br>"
+      window.alert("Ingrese todos los espacios vacíos");
+      res=true;
+      }
+    }
+    /*
     if(name.value.length<1 || email.value.length<1){
       parrafo.innerHTML = "Ingrese todos los espacios vacíos <br>"
       window.alert("Ingrese todos los espacios vacíos");
       entrar=true;
       res=true;
+      
     }
+    */
     if(name.value.length>40 && entrar==false){
-      parrafo.innerHTML = "Nombre muy largo <br>"
+      mensaje=mensaje+"*Nombre muy largo <br> "
       window.alert("Nombre muy largo");
       res=true;
   
     }
+    if(!regexNombre.test(name.value) && entrar==false ){
+      mensaje=mensaje+"*No ingrese Caracteres especiales en Nombre <br>"
+      window.alert("No ingrese Caracteres especiales en Nombre");
+      res=true;
+    }
     if(name.value.length <6 && entrar==false){
-        parrafo.innerHTML = "Nombre muy corto <br>"
+      mensaje=mensaje+"*Nombre muy corto <br> "      
         window.alert("Nombre muy corto");
         res=true;
     }
     
     if(!regexEmail.test(email.value) && entrar==false){
-        parrafo.innerHTML = "El email no es valido <br>"
+      mensaje=mensaje+"*El email no es valido<br> "    
         window.alert("El email no es valido");
         res=true;
     }
+    if(entrar==false){
+      parrafo.innerHTML = mensaje 
+      } 
   
     if(res==false) {
     //Aqui comprueba si existe un usuario con ese correo
