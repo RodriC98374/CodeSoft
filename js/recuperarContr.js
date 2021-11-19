@@ -123,14 +123,18 @@ let regexNombre=/^[A-Za-z\s]+$/
       res=true;
     }
     if(name.value.length <6 && entrar==false){
-      mensaje=mensaje+"*Nombre muy corto <br> "      
+      if(name.value!=""){
+        mensaje=mensaje+"*Nombre muy corto <br> "      
         window.alert("Nombre muy corto");
+      }
         res=true;
     }
     
     if(!regexEmail.test(email.value) && entrar==false){
-      mensaje=mensaje+"*El email no es valido<br> "    
+      if(email.value!=""){
+        mensaje=mensaje+"*El email no es valido<br> "    
         window.alert("El email no es valido");
+      }
         res=true;
     }
     if(entrar==false){
