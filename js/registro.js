@@ -89,6 +89,7 @@ Registrar.onclick=function(){
             GuardarUsuario(Usuario);
             localStorage.setItem("Sesion","Activo");
             localStorage.setItem("Nombre",Nombre)
+            localStorage.setItem("Rol","Estudiante")
             //location.href="../public/index.html";
             alert("Registrado correctamente");
             setTimeout(()=>{location.href="../index.html";},2000);   
