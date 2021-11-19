@@ -118,8 +118,10 @@ let regexNombre=/^[A-Za-z\s]+$/
   
     }
     if(!regexNombre.test(name.value) && entrar==false ){
-      mensaje=mensaje+"*No ingrese Caracteres especiales en Nombre <br>"
-      window.alert("No ingrese Caracteres especiales en Nombre");
+      if(name.value!=""){
+        mensaje=mensaje+"*No ingrese Caracteres especiales o numéricos en Nombre <br>"
+      window.alert("No ingrese Caracteres especiales o numéricos en Nombre");
+      }
       res=true;
     }
     if(name.value.length <6 && entrar==false){
