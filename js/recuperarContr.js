@@ -90,7 +90,7 @@ let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
 
 
     if(name.value.length<1 || email.value.length<1){
-      parrafo.innerHTML = "Ingrese todos los espacios vacios <br>"
+      parrafo.innerHTML = "Ingrese todos los espacios vacíos <br>"
       window.alert("Ingrese todos los espacios vacíos");
       entrar=true;
       res=true;
