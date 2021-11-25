@@ -2,7 +2,7 @@ if(localStorage.getItem("Rol")!="Administrador"){
   location.href="../index.html";
 }
 //Este arreglo es para ver si el usuario ya existe
-var docentes=[];
+var Usuarios=[];
 // @jhon coneccion con la base de datods
 const firebaseConfig = {
   apiKey: "AIzaSyD6bMG3VhwxFVxz50AG1FugRJ4QfW2qU5c",
@@ -18,11 +18,11 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   let db = firebase.firestore();
-//Cambie el Docente
-  const SaveAdmin = (docente) =>{
-//La base se llama docentes por que es generica
-  db.collection("docentes").add({
-      docente
+//Cambie el user por Usuario
+  const SaveAdmin = (Usuario) =>{
+//La base se llama usuarios por que es generica
+  db.collection("Usuarios").add({
+      Usuario
     })
   .then((docRef) => {
     MJSOK();
@@ -31,10 +31,11 @@ const firebaseConfig = {
     MJSERROR();
     });
   }
-  db.collection("Docentes").get().then(function(BaseDocentes){
+  db.collection("Usuarios").get().then(function(BaseUsuarios){
      
-    BaseDocentes.forEach(function(doc){
-      docentes.push({
+    BaseUsuarios.forEach(function(doc){
+      Usuarios.push({
+          Descripcion: doc.data().Usuario,
           ID: doc.id
       });  
     });
@@ -67,7 +68,7 @@ let regexNombre=/^[A-Za-z\s]+$/
     let Contraseña = $("#contraseña").val();
     //Antes habia la variable de la repeticion de la contraseña 
     //En ves de eso le puse una variable rol para que sepa que es administrador
-    let Rol ="Administrador"
+    let Rol ="Docente"
     let res = false
     let entrar = false
 
@@ -174,19 +175,19 @@ let regexNombre=/^[A-Za-z\s]+$/
       email.value=""
       pasword.value=""
       pasword2.value=""
-      SaveAdmin(docente);
+      SaveAdmin(Usuario);
       }else{
-        alert("Ya existe ese docente");
-        parrafo.innerHTML = "El docente ya existe"
+        alert("Ya existe ese usuario");
+        parrafo.innerHTML = "El usuario ya existe"
       }
     }
   
   })
-  //Esta funcion es la que recorre la lista de docentes para saber si ya existe
+  //Esta funcion es la que recorre la lista de usuarios para saber si ya existe
   function Existe(a){
     var encontrado=0;
-    for(var i=0;i<docentes.length;i++){
-       if(a==docentes[i].Descripcion.Correo){
+    for(var i=0;i<Usuarios.length;i++){
+       if(a==Usuarios[i].Descripcion.Correo){
            encontrado=1;
        }
     }
