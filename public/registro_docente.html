@@ -58,30 +58,11 @@
                       <div class="form-group">
                         <label>Nombre Completo</label> 
                         <input id="nombre" type="text" placeholder="Ingrese el nombre completo " class="form-control" onkeypress="return sololetras(event)">
-                        <script>
-                          function sololetras(e){
-                            key= e.keyCode || e.which;
-                            teclado= String.fromCharCode(key).toLowerCase();
-                            letras=" abcdefghijgklmnopqrstuvwqyz";
-                            especiales="8-37-38-46-164";
-                            teclado_especial=false;
-                            for(var i in especiales){
-                              if (key==especiales[i]) {
-                                teclado_especial=true;
-                                break;
-                               }
-                             }
-                             if (letras.indexOf(teclado)==-1 && !teclado_especial) {
-                               return false;
-                               
-                             }
-                          }
-                        </script>
                       </div>
 
                       <div class="form-group">
                         <label>Correo Electrónico</label> 
-                        <input id="correo" type="" placeholder="Ingrese el correo electrónico" class="form-control">
+                        <input id="correo" type="text" placeholder="Ingrese el correo electrónico" class="form-control">
                       </div>
 
                       <div class="form-group">
@@ -119,10 +100,29 @@
   </div>
 
 </body>
+<script>
+  function sololetras(e){
+    key= e.keyCode || e.which;
+    teclado= String.fromCharCode(key).toLowerCase();
+    letras=" abcdefghijgklmnopqrstuvwqyz";
+    especiales="8-37-38-46-164";
+    teclado_especial=false;
+    for(var i in especiales){
+      if (key==especiales[i]) {
+        teclado_especial=true;
+        break;
+       }
+     }
+     if (letras.indexOf(teclado)==-1 && !teclado_especial) {
+       return false;
+       
+     }
+  }
+</script>
 
 <!-- @jhon scrip de admin y de jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-<script src="../js/adminDB.js"></script>    
+<script src="../js/docenteDB.js"></script>    
 <script src="../js/MostrarContraseña.js"></script>
 <script src="../js/redireccion.js"></script>
 </html>
