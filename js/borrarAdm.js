@@ -1,3 +1,6 @@
+if(localStorage.getItem("Rol")!="Administrador"){
+  location.href="../index.html";
+}
 var Usuarios=[];
 const firebaseConfig = {
     apiKey: "AIzaSyD6bMG3VhwxFVxz50AG1FugRJ4QfW2qU5c",
